@@ -1,0 +1,67 @@
+IDE
+Text editor
+Terminal:
+---------------------------
+3/18
+
+add a column..
+add columns..
+create table..
+add join tables..
+add belongs_to.. 
+
+change database for rails
+create user and database in PG
+create role ..
+
+rename column migration
+change colmn type migration ..
+
+*
+create an app using refinarycms
+
+
+
+-------------------------------------------
+3/20
+
+add default editor for git
+
+gitignore..
+display working branch in rails..
+create rails app with datatbse as postgress
+
+secret_token.rb..
+
+destroy generator,model..
+migration roolback,versioning..
+-------------------------------------------
+3/21 
+
+rspec bascic
+ config.include Capybara::DSL..
+
+eleminating bundle exec..
+rspec adwanced concepts..
+-------------------------------------------
+3/25  
+
+rails app diplay at heroku
+
+git clone
+
+created model and controller for exam_report APP
+-------------------------------------------
+3/26
+rake db:seed for exam report
+
+-------------------------------------------
+
+-------------------------------------------
+
+
+-------------------------------------------
+
+-------------------------------------------
+
+

@@ -1,0 +1,13 @@
++++++++++++++++++++++++Application without testing envmt+++++++++++++++++++++++++++++++++++++++++++++++
+~/Muralee/rails_projects$ rails new sample_app --skip-test-unit
+++++++++++++++++++++++++++database as Postgresql++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects$ rails new sample_app --skip-test-unit --database=postgresql
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+$ bundle install --without production
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
