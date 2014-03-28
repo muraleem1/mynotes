@@ -1,0 +1,134 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ echo "database.yml" >> .gitignore
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ git add .
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ git checkout -b exam_report2
+M	.gitignore
+M	config/database.yml
+A	config/database.yml~
+Switched to a new branch 'exam_report2'
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ git add .
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ git commit -m "commit1"
+[exam_report2 76df81e] commit1
+ 3 files changed, 70 insertions(+), 8 deletions(-)
+ create mode 100644 config/database.yml~
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ git status
+# On branch exam_report2
+nothing to commit, working directory clean
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ git diff
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ git log
+commit 76df81eea16fa077920d6fe8ab80b97e9285cec8
+Author: Muralee Mohan <muraleem3@gmail.com>
+Date:   Tue Mar 25 17:30:11 2014 +0530
+
+    commit1
+
+commit 613c294720910a17eb283ca75800471ad5e5d531
+Author: Srikanth <sri.panniru08@gmail.com>
+Date:   Tue Mar 25 15:55:23 2014 +0530
+
+    first commit
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ git remote -v
+origin	git://github.com/sri-sankl/exam_report.git (fetch)
+origin	git://github.com/sri-sankl/exam_report.git (push)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ rake db:seed
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ rails s
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ rake db:rollback
+rake aborted!
+Gem::LoadError: You have already activated rake 10.2.1, but your Gemfile requires rake 10.1.1. Prepending `bundle exec` to your command may solve this.
+/home/ostryalabs/Muralee/rails_projects/exam_report/config/boot.rb:4:in `<top (required)>'
+/home/ostryalabs/Muralee/rails_projects/exam_report/config/application.rb:1:in `<top (required)>'
+/home/ostryalabs/Muralee/rails_projects/exam_report/Rakefile:4:in `<top (required)>'
+(See full trace by running task with --trace)
+
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ bundle exec rake db:rollback
+==  CreateCces: reverting =====================================================
+-- drop_table(:cces)
+   -> 0.1253s
+==  CreateCces: reverted (0.1425s) ============================================
+
+*****changes in migration file***
+class CreateCces < ActiveRecord::Migration
+  def change
+    create_table :cces do |t|
+      t.integer :no_of_sas
+      t.float :per_of_sas
+      t.integer :no_of_fas
+      t.float :per_of_fas
+      t.float :final_exam_per
+
+      t.timestamps
+    end
+  end
+end
+***********
+
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ bundle exec rake db:migrate
+==  CreateCces: migrating =====================================================
+-- create_table(:cces)
+   -> 0.1136s
+==  CreateCces: migrated (0.1137s) ============================================
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ psql -U exam_report -d exam_report_production;
+psql (9.3.4)
+Type "help" for help.
+
+exam_report_production=# select *from cces;
+ id | no_of_sas | per_of_sas | no_of_fas | per_of_fas | final_exam_per | created_at | updated_at 
+----+-----------+------------+-----------+------------+----------------+------------+------------
+(0 rows)
+
+exam_report_production=# \d
+                      List of relations
+ Schema |            Name            |   Type   |    Owner    
+--------+----------------------------+----------+-------------
+ public | cces                       | table    | exam_report
+ public | cces_id_seq                | sequence | exam_report
+ public | faculties                  | table    | exam_report
+ public | faculties_id_seq           | sequence | exam_report
+ public | pg_search_documents        | table    | exam_report
+ public | pg_search_documents_id_seq | sequence | exam_report
+ public | schema_migrations          | table    | exam_report
+ public | sessions                   | table    | exam_report
+ public | sessions_id_seq            | sequence | exam_report
+ public | students                   | table    | exam_report
+ public | students_id_seq            | sequence | exam_report
+ public | users                      | table    | exam_report
+ public | users_id_seq               | sequence | exam_report
+(13 rows)
+
+exam_report_production=# \d cces
+                                       Table "public.cces"
+     Column     |            Type             |                     Modifiers                     
+----------------+-----------------------------+---------------------------------------------------
+ id             | integer                     | not null default nextval('cces_id_seq'::regclass)
+ no_of_sas      | integer                     | 
+ per_of_sas     | double precision            | 
+ no_of_fas      | integer                     | 
+ per_of_fas     | double precision            | 
+ final_exam_per | double precision            | 
+ created_at     | timestamp without time zone | 
+ updated_at     | timestamp without time zone | 
+Indexes:
+    "cces_pkey" PRIMARY KEY, btree (id)
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

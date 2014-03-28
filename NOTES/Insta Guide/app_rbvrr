@@ -1,0 +1,31 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (rbvrr_branch2)$ git commit -m "branch2_commit1"
+# On branch rbvrr_branch2
+nothing to commit, working directory clean
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (rbvrr_branch2)$ git push origin rbvrr_branch2
+Counting objects: 27, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (13/13), 2.17 KiB | 0 bytes/s, done.
+Total 13 (delta 10), reused 0 (delta 0)
+To git@github.com:Priya14/rbvrr.git
+ * [new branch]      rbvrr_branch2 -> rbvrr_branch2
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (rbvrr_branch2)$ rake db:migrate
+==  CreateUsers: migrating ====================================================
+-- create_table(:users)
+   -> 0.0318s
+==  CreateUsers: migrated (0.0320s) ===========================================
+
+==  DeviseCreateModels: migrating =============================================
+-- create_table(:models)
+   -> 0.0585s
+-- add_index(:models, :email, {:unique=>true})
+   -> 0.0251s
+-- add_index(:models, :reset_password_token, {:unique=>true})
+   -> 0.0256s
+==  DeviseCreateModels: migrated (0.1095s) ====================================
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

@@ -1,0 +1,115 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects$ git clone git://github.com/sri-sankl/exam_report.git
+Cloning into 'exam_report'...
+remote: Counting objects: 168, done.
+remote: Compressing objects: 100% (147/147), done.
+remote: Total 168 (delta 12), reused 168 (delta 12)
+Receiving objects: 100% (168/168), 202.32 KiB | 25.00 KiB/s, done.
+Resolving deltas: 100% (12/12), done.
+Checking connectivity... done.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects$ ls
+demo_app  exam_report  first_app  piano_plus  sample_app
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects$ cd exam_report
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ rails s
+Could not find activesupport-4.0.2 in any of the sources
+Run `bundle install` to install missing gems.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ bundle install
+Fetching source index from https://rubygems.org/
+Fetching https://github.com/krasio/nulldb.git
+
+********
+An error occurred while installing capybara-webkit (0.7.2), and Bundler cannot continue.
+Make sure that `gem install capybara-webkit -v '0.7.2'` succeeds before bundling.
+********
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ gem install capybara-webkit -v '0.7.2'
+Building native extensions.  This could take a while...
+ERROR:  Error installing capybara-webkit:
+	ERROR: Failed to build gem native extension.
+
+    /home/ostryalabs/.rbenv/versions/2.0.0-p451/bin/ruby extconf.rb
+
+
+Gem files will remain installed in /home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/capybara-webkit-0.7.2 for inspection.
+Results logged to /home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/capybara-webkit-0.7.2/./gem_make.out
+********
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ sudo apt-get install qt4-dev-tools libqt4-dev libqt4-core libqt4-gui
+[sudo] password for ostryalabs: 
+
+
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ bundle install
+Fetching source index from https://rubygems.org/
+
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Post-install message from haml:
+
+HEADS UP! Haml 4.0 has many improvements, but also has changes that may break
+your application:
+* Support for Ruby 1.8.6 dropped
+* Support for Rails 2 dropped
+* Sass filter now always outputs <style> tags
+* Data attributes are now hyphenated, not underscored
+* html2haml utility moved to the html2haml gem
+* Textile and Maruku filters moved to the haml-contrib gem
+
+For more info see:
+
+http://rubydoc.info/github/haml/haml/file/CHANGELOG.md
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+***
+CREATE USER postgres_user WITH PASSWORD 'password';
+CREATE DATABASE my_postgres_db OWNER postgres_user;
+***
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ subl .
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ sudo -u postgres createuser exam_report
+[sudo] password for ostryalabs: 
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ sudo -u postgres psql
+postgres=# ALTER ROLE exam_report WITH SUPERUSER CREATEDB CREATEROLE;
+postgres=# ALTER ROLE exam_report WITH PASSWORD 'welcome';
+
+***
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (master)$ rake db:create
+rake aborted!
+Gem::LoadError: You have already activated rake 10.2.1, but your Gemfile requires rake 10.2.0. Prepending `bundle exec` to your command may solve this.
+/home/ostryalabs/Muralee/rails_projects/rbvrr/config/boot.rb:4:in `<top (required)>'
+/home/ostryalabs/Muralee/rails_projects/rbvrr/config/application.rb:1:in `<top (required)>'
+/home/ostryalabs/Muralee/rails_projects/rbvrr/Rakefile:4:in `<top (required)>'
+(See full trace by running task with --trace)
+***
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ rake db:create
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (master)$ rake db:migrate
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ rake db:seed
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_report (exam_report2)$ rails s
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+

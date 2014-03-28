@@ -1,0 +1,16 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Error-> 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/first_app$ ssh -T git@github.com
+Agent admitted failure to sign using the key.
+Permission denied (publickey).
+
+Solution->
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/first_app$ ssh-add ~/.ssh/id_rsa
+Identity added: /home/ostryalabs/.ssh/id_rsa (/home/ostryalabs/.ssh/id_rsa)
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/first_app$ ssh -T git@github.com
+Hi muraleem3! You've successfully authenticated, but GitHub does not provide shell access.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/first_app$ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

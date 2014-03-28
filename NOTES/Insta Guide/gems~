@@ -1,0 +1,35 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/sample_app (static-pages)$ gem environment
+
+RubyGems Environment:
+  - RUBYGEMS VERSION: 2.0.14
+  - RUBY VERSION: 2.0.0 (2014-02-24 patchlevel 451) [x86_64-linux]
+  - INSTALLATION DIRECTORY: /home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0
+  - RUBY EXECUTABLE: /home/ostryalabs/.rbenv/versions/2.0.0-p451/bin/ruby
+  - EXECUTABLE DIRECTORY: /home/ostryalabs/.rbenv/versions/2.0.0-p451/bin
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - x86_64-linux
+  - GEM PATHS:
+     - /home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0
+     - /home/ostryalabs/.gem/ruby/2.0.0
+  - GEM CONFIGURATION:
+     - :update_sources => true
+     - :verbose => true
+     - :backtrace => false
+     - :bulk_threshold => 1000
+     - "gem" => "--no-ri --no-rdoc"
+  - REMOTE SOURCES:
+     - https://rubygems.org/
++++++++++++++++++++++devise gem++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (master)$ bundle show devise
+Could not find gem 'devise'.
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (rbvrr_branch2)$ bundle show devise
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/devise-3.2.4
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

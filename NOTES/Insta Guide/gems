@@ -1,0 +1,75 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/sample_app (static-pages)$ gem environment
+
+RubyGems Environment:
+  - RUBYGEMS VERSION: 2.0.14
+  - RUBY VERSION: 2.0.0 (2014-02-24 patchlevel 451) [x86_64-linux]
+  - INSTALLATION DIRECTORY: /home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0
+  - RUBY EXECUTABLE: /home/ostryalabs/.rbenv/versions/2.0.0-p451/bin/ruby
+  - EXECUTABLE DIRECTORY: /home/ostryalabs/.rbenv/versions/2.0.0-p451/bin
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - x86_64-linux
+  - GEM PATHS:
+     - /home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0
+     - /home/ostryalabs/.gem/ruby/2.0.0
+  - GEM CONFIGURATION:
+     - :update_sources => true
+     - :verbose => true
+     - :backtrace => false
+     - :bulk_threshold => 1000
+     - "gem" => "--no-ri --no-rdoc"
+  - REMOTE SOURCES:
+     - https://rubygems.org/
++++++++++++++++++++++devise gem++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (master)$ bundle show devise
+Could not find gem 'devise'.
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (rbvrr_branch2)$ bundle show devise
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/devise-3.2.4
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/rbvrr (rbvrr_branch2)$ rails generate devise:install
+    conflict  config/initializers/devise.rb
+Overwrite /home/ostryalabs/Muralee/rails_projects/rbvrr/config/initializers/devise.rb? (enter "h" for help) [Ynaqdh] y
+       force  config/initializers/devise.rb
+    conflict  config/locales/devise.en.yml
+Overwrite /home/ostryalabs/Muralee/rails_projects/rbvrr/config/locales/devise.en.yml? (enter "h" for help) [Ynaqdh] y
+       force  config/locales/devise.en.yml
+===============================================================================
+
+Some setup you must do manually if you haven't yet:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+     In production, :host should be set to the actual host of your application.
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  4. If you are deploying on Heroku with Rails 3.2 only, you may want to set:
+
+       config.assets.initialize_on_precompile = false
+
+     On config/application.rb forcing your application to not access the DB
+     or load models when precompiling your assets.
+
+  5. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

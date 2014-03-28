@@ -1,0 +1,10 @@
+ostryalabs@ostryalabs-5:~$ uname -a
+Linux ostryalabs-5 3.8.0-37-generic #53~precise1-Ubuntu SMP Wed Feb 19 21:37:54 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/demo_app (master)$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.4 LTS
+Release:	12.04
+Codename:	precise
++++++++++++++++++++++++++++++++++++++

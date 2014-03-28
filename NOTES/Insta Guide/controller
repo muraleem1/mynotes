@@ -1,0 +1,23 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ rails g controller AcadamicCalenders
+      create  app/controllers/acadamic_calenders_controller.rb
+      invoke  haml
+      create    app/views/acadamic_calenders
+      invoke  test_unit
+      create    test/controllers/acadamic_calenders_controller_test.rb
+      invoke  helper
+      create    app/helpers/acadamic_calenders_helper.rb
+      invoke    test_unit
+      create      test/helpers/acadamic_calenders_helper_test.rb
+      invoke  assets
+      invoke    js
+      create      app/assets/javascripts/acadamic_calenders.js
+      invoke    scss
+      create      app/assets/stylesheets/acadamic_calenders.css.scss
+      invoke  decorator
+      create    app/decorators/acadamic_calenders_decorator.rb
+      invoke    test_unit
+      create      test/decorators/acadamic_calenders_decorator_test.rb
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
