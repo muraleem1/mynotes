@@ -1,0 +1,41 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+sample_app_development=# \c exam_controller_development
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+You are now connected to database "exam_controller_development" as user "exam_controller".
+
+exam_controller_development=# \dt
+                  List of relations
+ Schema |       Name        | Type  |      Owner      
+--------+-------------------+-------+-----------------
+ public | calendars         | table | exam_controller
+ public | schema_migrations | table | exam_controller
+(2 rows)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+exam_controller_test=# \c exam_controller_development \dt
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+You are now connected to database "exam_controller_development" as user "exam_controller".
+                  List of relations
+ Schema |       Name        | Type  |      Owner      
+--------+-------------------+-------+-----------------
+ public | calendars         | table | exam_controller
+ public | schema_migrations | table | exam_controller
+(2 rows)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ psql -U exam_controller -d exam_controller_development -h 127.0.0.1 -W
+Password for user exam_controller: 
+psql (9.3.4)
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+Type "help" for help.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

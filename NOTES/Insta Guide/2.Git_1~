@@ -15,8 +15,6 @@ ostryalabs@ostryalabs-5:~/Muralee/rails_projects/first_app$
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 go to =>gedit  ~/.bashrc and paste below code at Bottom
 
-
-
 ********
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -32,3 +30,23 @@ PS1="$GREEN\u@\h$NO_COLOR:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
 ********
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git show-ref
+ec6e7f2c5f29b15c8538666887fd85803a61a161 refs/heads/exam_controller_muralee
+b1a38de658edbbec27e1e53f5024d95a738bb860 refs/heads/master
+0d582016acbbadb360d788678311f2751201927a refs/remotes/origin/exam_controller_muralee
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+v
+

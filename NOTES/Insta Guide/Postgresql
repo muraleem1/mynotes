@@ -112,7 +112,8 @@ postgres=# ALTER ROLE sample_app WITH PASSWORD 'welcome';
 ALTER ROLE
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-ostryalabs@ostryalabs-5:~/Muralee/rails_projects/sample_app (static-pages)$ psql -U sample_app -d my_project_development -h 127.0.0.1 -WPassword for user sample_app: 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/sample_app (static-pages)$ psql -U sample_app -d my_project_development -h 127.0.0.1 -W
+Password for user sample_app: 
 psql (9.3.3)
 SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
 Type "help" for help.

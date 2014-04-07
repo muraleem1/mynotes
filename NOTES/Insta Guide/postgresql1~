@@ -1,0 +1,37 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+sample_app_development=# \c exam_controller_development
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+You are now connected to database "exam_controller_development" as user "exam_controller".
+
+exam_controller_development=# \dt
+                  List of relations
+ Schema |       Name        | Type  |      Owner      
+--------+-------------------+-------+-----------------
+ public | calendars         | table | exam_controller
+ public | schema_migrations | table | exam_controller
+(2 rows)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+exam_controller_test=# \c exam_controller_development \dt
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+You are now connected to database "exam_controller_development" as user "exam_controller".
+                  List of relations
+ Schema |       Name        | Type  |      Owner      
+--------+-------------------+-------+-----------------
+ public | calendars         | table | exam_controller
+ public | schema_migrations | table | exam_controller
+(2 rows)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
