@@ -1,0 +1,513 @@
+ create mode 100644 app/views/notifications/new.html.haml
+ create mode 100644 app/views/notifications/new.html.haml~
+ create mode 100644 app/views/notifications/preview.html.erb~
+ create mode 100644 app/views/notifications/preview.html.haml~
+ create mode 100644 app/views/notifications/show.html.haml
+ create mode 100644 app/views/notifications/show.html.haml~
+ create mode 100644 app/views/shared/_banner.html.haml~
+ create mode 100644 app/views/shared/_header_menu.html.haml~
+ create mode 100644 app/views/shared/_photo_show.html.haml
+ create mode 100644 app/views/shared/_pop.html.haml
+ create mode 100644 app/views/shared/_pop.html.haml~
+ create mode 100644 app/views/shared/_welcome.html.haml
+ create mode 100644 app/views/shared/_welcome_note.html.haml
+ create mode 100644 app/views/shared/_welcome_note.html.haml~
+ create mode 100644 app/views/welcomes/_form.html.haml
+ create mode 100644 app/views/welcomes/edit.html.haml
+ create mode 100644 app/views/welcomes/index.html.haml
+ create mode 100644 app/views/welcomes/list.html.haml
+ create mode 100644 app/views/welcomes/new.html.haml
+ create mode 100644 app/views/welcomes/show.html.haml
+ create mode 100644 config/initializers/setup_mail.rb
+ create mode 100644 db/migrate/20140401052120_create_calendars.rb
+ create mode 100644 db/migrate/20140401055855_create_notifications.rb~
+ create mode 100644 db/migrate/20140404050646_create_notifications.rb
+ create mode 100644 db/migrate/20140404130322_create_feedbacks.rb
+ create mode 100644 db/migrate/20140408063625_create_welcomes.rb
+ create mode 100644 db/migrate/20140408135054_create_how_tos.rb
+ create mode 100644 db/migrate/20140409063808_create_documents.rb
+ create mode 100644 db/migrate/20140409110658_add_type_to_documents.rb
+ create mode 100644 spec/controllers/how_tos_controller_spec.rb
+ create mode 100644 spec/decorators/how_tos_decorator_spec.rb
+ create mode 100644 spec/helpers/how_tos_helper_spec.rb
+ create mode 100644 spec/models/document_spec.rb
+ create mode 100644 spec/models/how_to_spec.rb
+ create mode 100644 test/controllers/calendars_controller_test.rb
+ create mode 100644 test/controllers/notifications_controller_test.rb
+ create mode 100644 test/controllers/welcomes_controller_test.rb
+ create mode 100644 test/decorators/calendars_decorator_test.rb
+ create mode 100644 test/decorators/notifications_decorator_test.rb
+ create mode 100644 test/decorators/welcomes_decorator_test.rb
+ create mode 100644 test/fixtures/calendars.yml
+ create mode 100644 test/fixtures/notifications.yml
+ create mode 100644 test/fixtures/notifies.yml
+ create mode 100644 test/fixtures/welcomes.yml
+ create mode 100644 test/helpers/calendars_helper_test.rb
+ create mode 100644 test/helpers/notifications_helper_test.rb
+ create mode 100644 test/helpers/welcomes_helper_test.rb
+ create mode 100644 test/models/calendar_test.rb
+ create mode 100644 test/models/notification_test.rb
+ create mode 100644 test/models/welcome_test.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git checkout exam_controller_exams 
+Switched to branch 'exam_controller_exams'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git rebase master 
+First, rewinding head to replay your work on top of it...
+Applying: first commit_exams
+Applying: exam controller
+Using index info to reconstruct a base tree...
+M	config/routes.rb
+M	db/structure.sql
+<stdin>:25: trailing whitespace.
+    
+<stdin>:47: trailing whitespace.
+        
+<stdin>:51: trailing whitespace.
+        
+<stdin>:65: trailing whitespace.
+        
+<stdin>:95: space before tab in indent.
+  		Exam.select(:dept).group(:dept)
+warning: squelched 22 whitespace errors
+warning: 27 lines add whitespace errors.
+Falling back to patching base and 3-way merge...
+Auto-merging db/structure.sql
+CONFLICT (content): Merge conflict in db/structure.sql
+Auto-merging config/routes.rb
+Failed to merge in the changes.
+Patch failed at 0002 exam controller
+The copy of the patch that failed is found in:
+   /home/ostryalabs/Muralee/rails_projects/exam_controller/.git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ git diff
+diff --cc db/structure.sql
+index 9226d5b,32b2fac..0000000
+--- a/db/structure.sql
++++ b/db/structure.sql
+@@@ -770,14 -559,4 +821,17 @@@ INSERT INTO schema_migrations (version
+  
+  INSERT INTO schema_migrations (version) VALUES ('20140404125645');
+  
+ +INSERT INTO schema_migrations (version) VALUES ('20140404130322');
+ +
+ +INSERT INTO schema_migrations (version) VALUES ('20140405103818');
+ +
+ +INSERT INTO schema_migrations (version) VALUES ('20140408063625');
+ +
+ +INSERT INTO schema_migrations (version) VALUES ('20140408135054');
+ +
+ +INSERT INTO schema_migrations (version) VALUES ('20140409063808');
+ +
+ +INSERT INTO schema_migrations (version) VALUES ('20140409110658');
+++
++ INSERT INTO schema_migrations (version) VALUES ('20140409063315');
+++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ git add db/structure.sql
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ git rebase --continue
+Applying: exam controller
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash pop 
+Auto-merging config/routes.rb
+CONFLICT (content): Merge conflict in config/routes.rb
+Removing app/views/exams/index1.html.haml
+Auto-merging app/controllers/calendars_controller.rb
+Auto-merging app/controllers/auto_search_controller.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/controllers/auto_search_controller.rb
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/helpers/exams_helper.rb
+#	modified:   app/views/calendars/_search.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/exams/index.html.haml
+#	deleted:    app/views/exams/index1.html.haml
+#
+# Unmerged paths:
+#   (use "git reset HEAD <file>..." to unstage)
+#   (use "git add <file>..." to mark resolution)
+#
+#	both modified:      config/routes.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/views/exams/_exams.html.haml
+#	app/views/exams/_search.html.haml
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git add config/routes.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/controllers/auto_search_controller.rb
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/helpers/exams_helper.rb
+#	modified:   app/views/calendars/_search.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/exams/index.html.haml
+#	deleted:    app/views/exams/index1.html.haml
+#	modified:   config/routes.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/views/exams/_exams.html.haml
+#	app/views/exams/_search.html.haml
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git reset HEAD
+Unstaged changes after reset:
+M	app/controllers/auto_search_controller.rb
+M	app/controllers/calendars_controller.rb
+M	app/controllers/exams_controller.rb
+M	app/helpers/exams_helper.rb
+M	app/views/calendars/_search.html.haml
+M	app/views/exams/_form.html.haml
+M	app/views/exams/index.html.haml
+D	app/views/exams/index1.html.haml
+M	config/routes.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/controllers/auto_search_controller.rb
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/helpers/exams_helper.rb
+#	modified:   app/views/calendars/_search.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/exams/index.html.haml
+#	deleted:    app/views/exams/index1.html.haml
+#	modified:   config/routes.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/views/exams/_exams.html.haml
+#	app/views/exams/_search.html.haml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git diff
+diff --git a/app/controllers/auto_search_controller.rb b/app/controllers/auto_search_controller.rb
+index 3d3d588..f65e006 100644
+--- a/app/controllers/auto_search_controller.rb
++++ b/app/controllers/auto_search_controller.rb
+@@ -6,6 +6,7 @@ class AutoSearchController < ApplicationController
+   autocomplete :faculty, :name, :full => true
+   autocomplete :document,:filename, :full => true
+   autocomplete :calendar, :course, :full => true
++  autocomplete :exam, :dept, :full => true
+ 
+   def autocomplete_student_by_roll_no_and_name
+     term = params[:term]
+diff --git a/app/controllers/calendars_controller.rb b/app/controllers/calendars_controller.rb
+index 701dd82..83dcbf1 100644
+--- a/app/controllers/calendars_controller.rb
++++ b/app/controllers/calendars_controller.rb
+@@ -2,7 +2,7 @@ class CalendarsController < ApplicationController
+         
+   #respond_to :html,:jason
+     def index
+-     if params[:course].present? && params[:course] != "AllDepts"
++     if params[:course].present?
+         @calendars = Calendar.where(:course => params[:course])
+       else
+          @calendars = Calendar.all.order("course")
+diff --git a/app/controllers/exams_controller.rb b/app/controllers/exams_controller.rb
+index 4a6cd19..2c18e88 100644
+--- a/app/controllers/exams_controller.rb
++++ b/app/controllers/exams_controller.rb
+@@ -2,19 +2,13 @@ class ExamsController < ApplicationController
+        before_action :set_exam, only: [ :show, :edit, :update, :destroy]
+ 
+        def index
+-    if params[:dept].present? && params[:dept] != "AllDepts"
++    if params[:dept].present?
+         @exams = Exam.where(:dept => params[:dept])
+       else
+-         @exams = Exam.all.order("date")
++        @exams = Exam.first.present? ? Exam.where(:dept => Exam.order("dept asc").first.dept) : ""
+      end
+        end
+-  def index1
+-    if params[:dept].present? && params[:dept] != "AllDepts"
+-        @exams = Exam.where(:dept => params[:dept])
+-      else
+-         @exams = Exam.all.order("date")
+-     end
+-  end
++  
+   def show
+     
+   end
+@@ -56,7 +50,7 @@ class ExamsController < ApplicationController
+ 
+ 
+     def destroy
+-        
++
+         @exam.destroy
+         respond_to do |format|
+           format.html { redirect_to exams_url }
+diff --git a/app/helpers/exams_helper.rb b/app/helpers/exams_helper.rb
+index cc37f30..f7db3fd 100644
+--- a/app/helpers/exams_helper.rb
++++ b/app/helpers/exams_helper.rb
+@@ -1,2 +1,3 @@
+ module ExamsHelper
++       
+ end
+diff --git a/app/views/calendars/_search.html.haml b/app/views/calendars/_search.html.haml
+index 69bd982..de95179 100644
+--- a/app/views/calendars/_search.html.haml
++++ b/app/views/calendars/_search.html.haml
+@@ -1,4 +1,4 @@
+-= form_tag courses_path, :method => 'get' , :class => "form-inline" do
++= form_tag calendars_path, :method => 'get' , :class => "form-inline" do
+   .form-group.col-md-6
+     = autocomplete_field_tag :search_term,
+     '',
+diff --git a/app/views/exams/_form.html.haml b/app/views/exams/_form.html.haml
+index 31b357d..c4d3c1b 100644
+--- a/app/views/exams/_form.html.haml
++++ b/app/views/exams/_form.html.haml
+@@ -12,7 +12,7 @@
+       = f.label "Department", :class => 'col-sm-2 control-label'
+       .col-sm-8
+         = f.autocomplete_field :dept,
+-          auto_search_autocomplete_calendar_course_path,
++          auto_search_autocomplete_exam_dept_path,
+           :placeholder => "Course Name", :class => 'form-control'
+     .form-group
+       = f.label "Semester", :class => 'col-sm-2 control-label'
+diff --git a/app/views/exams/index.html.haml b/app/views/exams/index.html.haml
+index 0d003ec..d43fe66 100644
+--- a/app/views/exams/index.html.haml
++++ b/app/views/exams/index.html.haml
+@@ -1,46 +1 @@
+-.container
+-  .row
+-    .col-md-2
+-      %h2 Departments
+-      #calendar1
+-        /= render "search"
+-        = link_to 'AllDepts', exams_path(:dept=> "AllDepts")
+-        %table.table-striped
+-          - Exam.grouped_depts.sort_by { |x| x.dept.downcase }.each do |object|
+-            %tr
+-              %td
+-                = link_to object.dept, exams_path(:dept => object.dept)    
+-    .col-md-10
+-      %h1 Exam Schedule
+-      = link_to 'Add Exam Schedule', new_exam_path
+-      %table.table.table-striped.table-bordered.table-condensed.table-hover
+-        %thead
+-          %tr 
+-            %th Dept
+-            %th semester
+-            %th Subject
+-            %th Date
+-            %th From
+-            %th To
+-            - if current_user.admin?  
+-              %th
+-        %tbody
+-          - @exams.sort_by { |x| x.semester }.each do |exam|
+-            - if current_user.admin?         
+-              %tr
+-                %td= best_in_place exam, :dept,html_attrs: { "data-autocomplete" => auto_search_autocomplete_calendar_course_path, :class => "
+-                %td= best_in_place exam, :semester,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :subject, type: :textarea,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :date,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :from,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :to,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= link_to 'Delete', exam, method: :delete,data: { confirm: 'Are you sure?' }
+-            - else
+-              %tr
+-                %td= exam.dept
+-                %td= exam.semester
+-                %td= exam.subject
+-                %td= exam.date
+-                %td= exam.from
+-                %td= exam.to
+-      %br
++= render 'exams'
+\ No newline at end of file
+diff --git a/app/views/exams/index1.html.haml b/app/views/exams/index1.html.haml
+deleted file mode 100644
+index c4c0cac..0000000
+--- a/app/views/exams/index1.html.haml
++++ /dev/null
+@@ -1,53 +0,0 @@
+-.container
+-  .row
+-    .col-md-2
+-      %h2 Departments
+-      #calendar1
+-        /= render "search"
+-        = link_to 'AllDepts', exams_path(:dept=> "AllDepts")
+-        %table.table-striped
+-          - Exam.grouped_depts.sort_by { |x| x.dept.downcase }.each do |object|
+-            %tr
+-              %td
+-                = link_to object.dept, index1_exams_path(:dept => object.dept)
+-    .col-md-10
+-      %h1 Exam Schedule
+-      = link_to 'Add Exam Schedule', new_exam_path
+-      - @exams.each do |exam|
+-        - exam_dept = Exam.where(:dept => exam.dept)
+-        - @s=exam_dept.map {|e| e.semester}.to_set.sort
+-      - @s.each do |sem|
+-        %h3 SEMESTER-#{sem}
+-        %table.table.table-striped.table-bordered.table-condensed.table-hover
+-          %thead
+-            %tr 
+-              %th Dept
+-              %th semester
+-              %th Subject
+-              %th Date
+-      = link_to 'Add Exam Schedule', new_exam_path
+-      %table.table.table-striped.table-bordered.table-condensed.table-hover
+-        %thead
+-          %tr 
+-            %th Dept
+-            %th semester
+-            %th Subject
+-            %th Date
+-            %th From
+-            %th To
+-            - if current_user.admin?  
+-              %th
+-        %tbody
+-          - @exams.sort_by { |x| x.semester }.each do |exam|
+-            - if current_user.admin?         
+-              %tr
+-                %td= best_in_place exam, :dept,html_attrs: { "data-autocomplete" => auto_search_autocomplete_calendar_course_path, :class => "
+-                %td= best_in_place exam, :semester,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :subject, type: :textarea,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :date,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :from,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= best_in_place exam, :to,html_attrs: {:class => "form-control col-sm-3" } 
+-                %td= link_to 'Delete', exam, method: :delete,data: { confirm: 'Are you sure?' }
+-            - else
+-              %tr
+-                %td= exam.dept
+-                %td= exam.semester
+-                %td= exam.subject
+-                %td= exam.date
+-                %td= exam.from
+-                %td= exam.to
+-      %br
++= render 'exams'
+\ No newline at end of file
+diff --git a/app/views/exams/index1.html.haml b/app/views/exams/index1.html.haml
+deleted file mode 100644
+index c4c0cac..0000000
+--- a/app/views/exams/index1.html.haml
++++ /dev/null
+@@ -1,53 +0,0 @@
+-.container
+-  .row
+-    .col-md-2
+-      %h2 Departments
+-      #calendar1
+-        /= render "search"
+-        = link_to 'AllDepts', exams_path(:dept=> "AllDepts")
+-        %table.table-striped
+-          - Exam.grouped_depts.sort_by { |x| x.dept.downcase }.each do |object|
+-            %tr
+-              %td
+-                = link_to object.dept, index1_exams_path(:dept => object.dept)
+-    .col-md-10
+-      %h1 Exam Schedule
+-      = link_to 'Add Exam Schedule', new_exam_path
+-      - @exams.each do |exam|
+-        - exam_dept = Exam.where(:dept => exam.dept)
+-        - @s=exam_dept.map {|e| e.semester}.to_set.sort
+-      - @s.each do |sem|
+-        %h3 SEMESTER-#{sem}
+-        %table.table.table-striped.table-bordered.table-condensed.table-hover
+-          %thead
+-            %tr 
+-              %th Dept
+-              %th semester
+-              %th Subject
+-              %th Date
+-              %th From
+-              %th To
+-              - if current_user.admin?  
+-                %th
+-          %tbody
+-            - @exams.each do |exam|
+-              - if exam.semester == sem
+-                - if current_user.admin?
+-                  %tr
+-                    %td= best_in_place exam, :dept,html_attrs: { "data-autocomplete" => auto_search_autocomplete_calendar_course_path, :class 
+-                    %td= best_in_place exam, :semester,html_attrs: {:class => "form-control col-sm-3" } 
+-                    %td= best_in_place exam, :subject, type: :textarea,html_attrs: {:class => "form-control col-sm-3" } 
+-                    %td= best_in_place exam, :date,html_attrs: {:class => "form-control col-sm-3" } 
+-                    %td= best_in_place exam, :from,html_attrs: {:class => "form-control col-sm-3" } 
+-                    %td= best_in_place exam, :to,html_attrs: {:class => "form-control col-sm-3" } 
+-                    %td= link_to 'Delete', exam, method: :delete,data: { confirm: 'Are you sure?' }
+-                - else
+-                  %tr
+-                    %td= exam.dept
+-                    %td= exam.semester
+-                    %td= exam.subject
+-                    %td= exam.date
+-                    %td= exam.from
+-                    %td= exam.to
+-%br
+-                  
+diff --git a/config/routes.rb b/config/routes.rb
+index 1536f01..4e7fe58 100644
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@ -50,6 +50,7 @@ ExamController::Application.routes.draw do
+   get 'auto_search/autocomplete_how_to_name'
+   get 'auto_search/autocomplete_document_filename'
+   get 'auto_search/autocomplete_calendar_course'
++  get 'auto_search/autocomplete_exam_dept'
+   
+   post "employees/:id" => "employees#update"
+   get "org_chart" => "employees#hierarchy"
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/controllers/auto_search_controller.rb
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/helpers/exams_helper.rb
+#	modified:   app/views/calendars/_search.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/exams/index.html.haml
+#	deleted:    app/views/exams/index1.html.haml
+#	modified:   config/routes.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/views/exams/_exams.html.haml
+#	app/views/exams/_search.html.haml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git rm app/views/exams/index1.html.haml
+rm 'app/views/exams/index1.html.haml'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ rake db:migrate
+Could not find thread_safe-0.3.3 in any of the sources
+Run `bundle install` to install missing gems.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ 
+

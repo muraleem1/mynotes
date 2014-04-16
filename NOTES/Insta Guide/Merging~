@@ -1,0 +1,503 @@
+
+git chckout master
+ 
+git stash
+
+git checkout master
+
+git fetch
+
+git merge origin/master
+
+git checkout branch
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++========
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++========
+index f837f9b,943e8da..0000000
+--- a/Gemfile
++++ b/Gemfile
+@@@ -11,11 -11,9 +11,12 @@@ group :assets d
+    gem 'uglifier', '>= 1.3.0'
+    gem 'coffee-rails', '~> 4.0.0'
+    gem 'compass-rails'
++ 
+  end
+  
+ +gem 'roo'
+ +gem 'virtus'
+ +
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', platforms: :ruby
+  
+@@@ -26,7 -24,11 +27,11 @@@ gem 'jquery-rails
+  gem 'turbolinks'
+  
+  gem 'pg'
+ -#gem 'jquery-rails'
+++
+  gem 'jquery-ui-rails', '4.1.0'
++ gem 'best_in_place', github: 'aaronchi/best_in_place'
++ 
++ 
+  gem 'cancan', '1.6.7'
+  gem 'devise'
+  gem 'draper'
+@@@ -58,17 -57,5 +65,17 @@@ en
+  # Use Capistrano for deployment
+  # gem 'capistrano', group: :development
+  
+ +#gem "google_visualr", "~> 2.1.0" 
+ +
+  # Use debugger
+  # gem 'debugger', group: [:development, :test]
+ +group :development, :test do
+ +  gem 'rspec-rails'
+ +  gem "capybara-webkit", '~> 0.7.2'
+ +  gem 'activerecord-nulldb-adapter', :git => 'https://github.com/krasio/nulldb.git', :branch => 'activerecord-3.2.1'
+ +  gem 'launchy'
+ +  gem 'capybara', '~> 1.1.2'
+ +  gem 'database_cleaner'
+ +  gem 'shoulda-matchers'
+ +  gem 'anticipate'
+- end
+++end
+diff --cc Gemfile.lock
+index 0c71d47,931660c..0000000
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@@ -1,10 -1,10 +1,16 @@@
+  GIT
+ +  remote: https://github.com/krasio/nulldb.git
+ +  revision: e954748d46bf9b0d91eaa83d35d7181fa6c233f1
+ +  branch: activerecord-3.2.1
+ +  specs:
+ +    activerecord-nulldb-adapter (0.2.1)
+ +      activerecord (>= 2.0.0)
++   remote: git://github.com/aaronchi/best_in_place.git
++   revision: 1152e2256afd485e66602833fd99d09d60994841
++   specs:
++     best_in_place (2.1.0)
++       jquery-rails
++       rails (>= 3.1)
+  
+  GEM
+    remote: https://rubygems.org/
+@@@ -230,8 -159,7 +236,9 @@@ PLATFORM
+    ruby
+  
+  DEPENDENCIES
+ +  activerecord-nulldb-adapter!
+ +  anticipate
++   best_in_place!
+    bootstrap-sass (~> 3.0.3.0)
+    bootstrap-will_paginate
+    cancan (= 1.6.7)
+diff --cc app/assets/javascripts/application.js
+index 30fe991,4c2aace..0000000
+--- a/app/assets/javascripts/application.js
++++ b/app/assets/javascripts/application.js
+@@@ -1,14 -1,20 +1,16 @@@
+ -// This is a manifest file that'll be compiled into application.js, which will include all the files
+ -// listed below.
+ -//
+ -// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+ -// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
+ -//
+ -// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+ -// compiled file.
+ -//
+ -// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+ -// about supported directives.
+ -//
+  //= require jquery
+ +//= require jquery.ui.autocomplete
+ +//= require jquery.ui.datepicker
+ +//= require autocomplete-rails
+  //= require jquery_ujs
+  //= require turbolinks
+ +//= require jsapi
+ +
+ +
+  //= require bootstrap
+ +//= require jquery.remotipart
+ +
+ +//= require_self
++ //= require jquery.ui.all
++ //= require best_in_place
+ -
+  //= require_tree .
+diff --cc app/assets/javascripts/home.js.coffee
+index 82c1594,c56d3b2..0000000
+--- a/app/assets/javascripts/home.js.coffee
++++ b/app/assets/javascripts/home.js.coffee
+diff --cc config/routes.rb
+index 66c00c5,761635b..0000000
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@@ -1,47 -1,12 +1,55 @@@
+  ExamController::Application.routes.draw do
+ +  devise_for :users, :controllers => { :sessions => 'sessions'}
+    root to: "home#home_page"
+ +
+ +  resources :employees do
+ +    collection do
+ +
+ +    end
+ +  end
+ +
+ +  resources :courses do
+ +    member do
+ +      get "course_subjects"
+ +    end
+ +    collection do
+ +      get "course_sems"
+ +    end
+ +  end
+ +
+ +  resources :results do
+ +    collection do
+ +      get "result_upload"
+ +      post "upload"
+ +    end
+ +  end
+ +
+ +  resources :faculties
+ +
+ +  resources :students do
+ +    collection do
+ +      get "new_upload"
+ +      post "upload"
+ +    end
+ +  end
+ +
+ +  get 'auto_search/autocomplete_course_name'
+ +  get 'auto_search/autocomplete_faculty_name'
+ +  get 'auto_search/autocomplete_student_by_roll_no_and_name'
+ +
+ +  
+ +  post "employees/:id" => "employees#update"
+ +  get "org_chart" => "employees#hierarchy"
+ +
+ +  get "calenders"
+-   resources :calendars
+++
++   resources :calendars do
++       collection do
++       get "index1"
++       get "index2"
++       get "result"
++       get "index3"
++       end
++   end
+  
+  end
+* Unmerged path app/assets/stylesheets/application.css
+* Unmerged path app/assets/stylesheets/custom.css.scss
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git status
+# rebase in progress; onto 16599b8
+# You are currently rebasing branch 'exam_controller_muralee' on '16599b8'.
+#   (fix conflicts and then run "git rebase --continue")
+#   (use "git rebase --skip" to skip this patch)
+#   (use "git rebase --abort" to check out the original branch)
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   app/BACKUP/calendars.js.cofee
+#	new file:   app/BACKUP/home.js
+#	new file:   app/BACKUP/untitled
+#	modified:   app/assets/javascripts/calendars.js
+#	new file:   app/assets/stylesheets/application.css~
+#	modified:   app/assets/stylesheets/calendars.css.scss
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/models/calendar.rb
+#	new file:   app/views/calendars/#index.html.haml#
+#	modified:   app/views/calendars/_form.html.haml
+#	modified:   app/views/calendars/index.html.haml
+#	new file:   app/views/calendars/index1.html.haml
+#	new file:   app/views/calendars/index2.html.haml
+#	new file:   app/views/calendars/index3.html.haml
+#	new file:   app/views/calendars/result.html.haml
+#
+# Unmerged paths:
+#   (use "git reset HEAD <file>..." to unstage)
+#   (use "git add/rm <file>..." as appropriate to mark resolution)
+#
+#	both modified:      Gemfile
+#	both modified:      Gemfile.lock
+#	both modified:      app/assets/javascripts/application.js
+#	both added:         app/assets/javascripts/home.js.coffee
+#	deleted by us:      app/assets/stylesheets/application.css
+#	deleted by us:      app/assets/stylesheets/custom.css.scss
+#	both modified:      config/routes.rb
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git add Gemfile
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git add Gemfile.lock
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git add app/assets/javascripts/application.js
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git add app/assets/javascripts/home.js.coffee
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git add config/routes.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git rm app/assets/stylesheets/application.css
+app/assets/stylesheets/application.css: needs merge
+rm 'app/assets/stylesheets/application.css'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git rm app/assets/stylesheets/custom.css.scss
+app/assets/stylesheets/custom.css.scss: needs merge
+rm 'app/assets/stylesheets/custom.css.scss'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git status
+# rebase in progress; onto 16599b8
+# You are currently rebasing branch 'exam_controller_muralee' on '16599b8'.
+#   (all conflicts fixed: run "git rebase --continue")
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   Gemfile
+#	modified:   Gemfile.lock
+#	new file:   app/BACKUP/calendars.js.cofee
+#	new file:   app/BACKUP/home.js
+#	new file:   app/BACKUP/untitled
+#	modified:   app/assets/javascripts/application.js
+#	modified:   app/assets/javascripts/calendars.js
+#	modified:   app/assets/javascripts/home.js.coffee
+#	new file:   app/assets/stylesheets/application.css~
+#	modified:   app/assets/stylesheets/calendars.css.scss
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/models/calendar.rb
+#	new file:   app/views/calendars/#index.html.haml#
+#	modified:   app/views/calendars/_form.html.haml
+#	modified:   app/views/calendars/index.html.haml
+#	new file:   app/views/calendars/index1.html.haml
+#	new file:   app/views/calendars/index2.html.haml
+#	new file:   app/views/calendars/index3.html.haml
+#	new file:   app/views/calendars/result.html.haml
+#	modified:   config/routes.rb
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_muralee))$ git rebase --continue
+Applying: exam_controller_muralee
+Applying: commit4
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git stash pop
+# On branch exam_controller_muralee
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/BACKUP/untitled
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/models/calendar.rb
+#	modified:   app/views/calendars/index.html.haml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (45b4769edb58c0eb1e973b5faf7d465c0f6fe7ab)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git status
+# On branch exam_controller_muralee
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/BACKUP/untitled
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/models/calendar.rb
+#	modified:   app/views/calendars/index.html.haml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ bundle install
+Updating git://github.com/aaronchi/best_in_place.git
+Fetching gem metadata from https://rubygems.org/........
+Fetching additional metadata from https://rubygems.org/..
+Resolving dependencies...
+Using rake (10.2.2)
+Using i18n (0.6.9)
+Using minitest (4.7.5)
+Using multi_json (1.9.2)
+Installing thread_safe (0.3.2)
+Using tzinfo (0.3.39)
+Using activesupport (4.0.2)
+Using builder (3.1.4)
+Using erubis (2.7.0)
+Using rack (1.5.2)
+Using rack-test (0.6.2)
+Using actionpack (4.0.2)
+Using mime-types (1.25.1)
+Using polyglot (0.3.4)
+Using treetop (1.4.15)
+Using mail (2.5.4)
+Using actionmailer (4.0.2)
+Using activemodel (4.0.2)
+Using activerecord-deprecated_finders (1.0.3)
+Using arel (4.0.2)
+Using activerecord (4.0.2)
+Using activerecord-nulldb-adapter (0.2.1) from https://github.com/krasio/nulldb.git (at activerecord-3.2.1)
+Using addressable (2.3.6)
+Using anticipate (0.1.1)
+Using descendants_tracker (0.0.3)
+Using ice_nine (0.11.0)
+Using axiom-types (0.0.5)
+Using bcrypt (3.1.7)
+Using thor (0.19.1)
+Using railties (4.0.2)
+Using jquery-rails (3.1.0)
+Using bundler (1.5.3)
+Using hike (1.2.3)
+Using tilt (1.4.1)
+Using sprockets (2.11.0)
+Using sprockets-rails (2.0.1)
+Using rails (4.0.2)
+Using best_in_place (2.1.0) from git://github.com/aaronchi/best_in_place.git (at master)
+Using sass (3.2.18)
+Using bootstrap-sass (3.0.3.0)
+Using will_paginate (3.0.5)
+Using bootstrap-will_paginate (0.0.10)
+Using cancan (1.6.7)
+Installing mini_portile (0.5.3)
+Using nokogiri (1.6.1)
+Using ffi (1.9.3)
+Installing childprocess (0.5.2)
+Using rubyzip (1.1.2)
+Using websocket (1.0.7)
+Installing selenium-webdriver (2.41.0)
+Using xpath (0.1.4)
+Using capybara (1.1.4)
+Using capybara-webkit (0.7.2)
+Using json (1.8.1)
+Installing carrierwave (0.10.0)
+Using chunky_png (1.3.0)
+Using coercible (1.0.0)
+Using coffee-script-source (1.7.0)
+Using execjs (2.0.2)
+Using coffee-script (2.2.0)
+Using coffee-rails (4.0.1)
+Using fssm (0.2.10)
+Using compass (0.12.4)
+Using compass-rails (1.1.7)
+Using database_cleaner (1.2.0)
+Using orm_adapter (0.5.0)
+Using warden (1.2.3)
+Using devise (3.2.4)
+Using diff-lcs (1.2.5)
+Using request_store (1.0.5)
+Using draper (1.3.0)
+Using equalizer (0.0.9)
+Installing gon (5.0.4)
+Using haml (4.0.5)
+Using haml-rails (0.5.3)
+Using jbuilder (1.5.3)
+Using jquery-ui-rails (4.1.0)
+Using launchy (2.4.2)
+Using pg (0.17.1)
+Installing rails3-jquery-autocomplete (1.0.12)
+Using rdoc (4.1.1)
+Installing remotipart (1.2.1)
+Using ruby-ole (1.2.11.7)
+Using spreadsheet (0.9.7)
+Using roo (1.13.2)
+Using rspec-core (2.14.8)
+Using rspec-expectations (2.14.5)
+Using rspec-mocks (2.14.6)
+Using rspec-rails (2.14.2)
+Using sass-rails (4.0.2)
+Using sdoc (0.4.0)
+Using shoulda-matchers (2.5.0)
+Using turbolinks (2.2.1)
+Using uglifier (2.5.0)
+Using virtus (1.0.1)
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ rake db:migrate
+rake aborted!
+ArgumentError: missing :controller
+/home/ostryalabs/Muralee/rails_projects/exam_controller/config/routes.rb:44:in `block in <top (required)>'
+/home/ostryalabs/Muralee/rails_projects/exam_controller/config/routes.rb:1:in `<top (required)>'
+/home/ostryalabs/Muralee/rails_projects/exam_controller/config/environment.rb:5:in `<top (required)>'
+Tasks: TOP => db:migrate => environment
+(See full trace by running task with --trace)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ rake db:migrate
+==  CreateEmployees: migrating ================================================
+-- create_table(:employees)
+   -> 0.2605s
+==  CreateEmployees: migrated (0.2607s) =======================================
+
+==  AddAvatarToEmployees: migrating ===========================================
+-- add_column(:employees, :avatar, :string)
+   -> 0.0011s
+==  AddAvatarToEmployees: migrated (0.0012s) ==================================
+
+==  CreateResults: migrating ==================================================
+-- create_table(:results)
+   -> 0.0575s
+==  CreateResults: migrated (0.0576s) =========================================
+
+==  CreateCourses: migrating ==================================================
+-- create_table(:courses)
+   -> 0.0585s
+==  CreateCourses: migrated (0.0586s) =========================================
+
+==  CreateFaculties: migrating ================================================
+-- create_table(:faculties)
+   -> 0.0588s
+==  CreateFaculties: migrated (0.0589s) =======================================
+
+==  CreateStudents: migrating =================================================
+-- create_table(:students)
+   -> 0.0753s
+==  CreateStudents: migrated (0.0755s) ========================================
+
+==  CreateFacultyCourses: migrating ===========================================
+-- create_table(:faculty_courses)
+   -> 0.0249s
+==  CreateFacultyCourses: migrated (0.0250s) ==================================
+
+==  DeviseCreateUsers: migrating ==============================================
+-- create_table(:users)
+   -> 0.0585s
+-- add_index(:users, :email, {:unique=>true})
+   -> 0.0337s
+-- add_index(:users, :reset_password_token, {:unique=>true})
+   -> 0.0371s
+==  DeviseCreateUsers: migrated (0.1297s) =====================================
+
+==  ChangeCourseIdToCourseStudents: migrating =================================
+-- add_column(:students, :dept_name, :string)
+   -> 0.0006s
+-- remove_column(:students, :course_id, :integer)
+   -> 0.0109s
+==  ChangeCourseIdToCourseStudents: migrated (0.0118s) ========================
+
+==  RemoveStudentDetailsFromResults: migrating ================================
+-- remove_column(:results, :student_name, :string)
+   -> 0.0005s
+-- remove_column(:results, :student_roll_no, :string)
+   -> 0.0004s
+-- add_column(:results, :student_id, :integer)
+   -> 0.0005s
+==  RemoveStudentDetailsFromResults: migrated (0.0016s) =======================
+
+==  RemoveCourseDetailsFromResults: migrating =================================
+-- remove_column(:results, :course, :string)
+   -> 0.0007s
+-- remove_column(:results, :semester, :string)
+   -> 0.0005s
+-- add_column(:results, :course_id, :integer)
+   -> 0.0007s
+==  RemoveCourseDetailsFromResults: migrated (0.0023s) ========================
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ rails s
+=> Booting WEBrick
+=> Rails 4.0.2 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+A server is already running. Check /home/ostryalabs/Muralee/rails_projects/exam_controller/tmp/pids/server.pid.
+Exiting
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ rake db:seed
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git mv app/assets/javascripts/home.js.coffee app/assets/javascripts/home.js
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++========
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++========
+

@@ -1,0 +1,407 @@
+ostryalabs@ostryalabs-5:~$ cd Muralee/rails_projects/exam_controller/
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/assets/stylesheets/custom.css.sass
+#	modified:   app/views/calendars/index.html.haml
+#	modified:   app/views/exams/_exams.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/shared/_menu.html.haml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+	app/controllers/exams_controller.rb
+	app/models/exam.rb
+	app/views/calendars/index.html.haml
+	app/views/exams/_exams.html.haml
+	app/views/exams/_form.html.haml
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash
+Saved working directory and index state WIP on exam_controller_exams: e5ce75a Exams schedule
+HEAD is now at e5ce75a Exams schedule
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git checkout master
+Switched to branch 'master'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git status
+# On branch master
+nothing to commit, working directory clean
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git fetch
+remote: Counting objects: 89, done.
+remote: Compressing objects: 100% (88/88), done.
+remote: Total 89 (delta 27), reused 0 (delta 0)
+Unpacking objects: 100% (89/89), done.
+From github.com:sri-sankl/exam_controller
+   dcd8cd0..9b3ca79  master     -> origin/master
+ + 140b09b...9b3ca79 priya      -> origin/priya  (forced update)
+   313c0f9..8a3630a  srikanth   -> origin/srikanth
+ * [new branch]      swami      -> origin/swami
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git merge origin/master
+Updating dcd8cd0..9b3ca79
+Fast-forward
+ app/assets/images/newww.gif               | Bin 0 -> 3402 bytes
+ app/assets/javascripts/exams.js           |   2 ++
+ app/assets/stylesheets/custom.css.sass    |   5 +++++
+ app/assets/stylesheets/exams.css.sass     |   3 +++
+ app/controllers/exams_controller.rb       |  79 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ app/controllers/home_controller.rb        |   2 +-
+ app/decorators/exams_decorator.rb         |  13 +++++++++++
+ app/helpers/exams_helper.rb               |   2 ++
+ app/models/exam.rb                        |   7 ++++++
+ app/views/calendars/index.html.haml       |   2 +-
+ app/views/exams/_form.html.haml           |  41 +++++++++++++++++++++++++++++++++++
+ app/views/exams/edit.html.haml            |   2 ++
+ app/views/exams/index.html.haml           |  46 +++++++++++++++++++++++++++++++++++++++
+ app/views/exams/index1.html.haml          |  53 +++++++++++++++++++++++++++++++++++++++++++++
+ app/views/exams/new.html.haml             |   2 ++
+ app/views/exams/show.html.haml            |  23 ++++++++++++++++++++
+ app/views/notifications/_form.html.haml   |   2 +-
+ app/views/notifications/_show.html.haml   |  23 ++++++++++----------
+ app/views/notifications/index.html.haml   |  15 ++++++++-----
+ app/views/shared/_welcome_note.html.haml  |   2 ++
+ app/views/welcomes/_form.html.haml        |   2 +-
+ app/views/welcomes/index.html.haml        |   6 +++---
+ app/views/welcomes/show.html.haml         |   1 -
+ config/routes.rb                          |   7 ++++++
+ db/migrate/20140409063315_create_exams.rb |  14 ++++++++++++
+ db/structure.sql                          | 109 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------
+ spec/controllers/exams_controller_spec.rb |   5 +++++
+ spec/decorators/exams_decorator_spec.rb   |   4 ++++
+ spec/helpers/exams_helper_spec.rb         |  15 +++++++++++++
+ spec/models/exam_spec.rb                  |   5 +++++
+ 30 files changed, 453 insertions(+), 39 deletions(-)
+ create mode 100644 app/assets/images/newww.gif
+ create mode 100644 app/assets/javascripts/exams.js
+ create mode 100644 app/assets/stylesheets/exams.css.sass
+ create mode 100644 app/controllers/exams_controller.rb
+ create mode 100644 app/decorators/exams_decorator.rb
+ create mode 100644 app/helpers/exams_helper.rb
+ create mode 100644 app/models/exam.rb
+ create mode 100644 app/views/exams/_form.html.haml
+ create mode 100644 app/views/exams/edit.html.haml
+ create mode 100644 app/views/exams/index.html.haml
+ create mode 100644 app/views/exams/index1.html.haml
+ create mode 100644 app/views/exams/new.html.haml
+ create mode 100644 app/views/exams/show.html.haml
+ create mode 100644 db/migrate/20140409063315_create_exams.rb
+ create mode 100644 spec/controllers/exams_controller_spec.rb
+ create mode 100644 spec/decorators/exams_decorator_spec.rb
+ create mode 100644 spec/helpers/exams_helper_spec.rb
+ create mode 100644 spec/models/exam_spec.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git checkout exam_controller_exams 
+Switched to branch 'exam_controller_exams'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: exam controller
+Using index info to reconstruct a base tree...
+M	app/controllers/exams_controller.rb
+M	config/routes.rb
+M	db/structure.sql
+<stdin>:25: trailing whitespace.
+    
+<stdin>:47: trailing whitespace.
+        
+<stdin>:51: trailing whitespace.
+        
+<stdin>:65: trailing whitespace.
+        
+<stdin>:95: space before tab in indent.
+  		Exam.select(:dept).group(:dept)
+warning: squelched 23 whitespace errors
+warning: 28 lines add whitespace errors.
+Falling back to patching base and 3-way merge...
+No changes -- Patch already applied.
+Applying: Exams schedule
+Using index info to reconstruct a base tree...
+M	db/structure.sql
+<stdin>:37: trailing whitespace.
+  
+<stdin>:56: trailing whitespace.
+	
+<stdin>:89: trailing whitespace.
+            = link_to object.course, calendars_path(:course => object.course),:class => "list-group-item #{object.course == params[:course] ? "active" : ''}" 
+<stdin>:94: trailing whitespace.
+      .btn-primary Academic events 
+<stdin>:106: trailing whitespace.
+                %td= best_in_place calendar, :from,html_attrs:{:class => "datepicker form-control" } 
+warning: squelched 8 whitespace errors
+warning: 13 lines add whitespace errors.
+Falling back to patching base and 3-way merge...
+Auto-merging db/structure.sql
+CONFLICT (content): Merge conflict in db/structure.sql
+Auto-merging app/views/exams/_exams.html.haml
+Failed to merge in the changes.
+Patch failed at 0002 Exams schedule
+The copy of the patch that failed is found in:
+   /home/ostryalabs/Muralee/rails_projects/exam_controller/.git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ git diff
+diff --cc db/structure.sql
+index 62b8b93,1d0ed96..0000000
+--- a/db/structure.sql
++++ b/db/structure.sql
+@@@ -370,36 -373,6 +373,39 @@@ CREATE SEQUENCE notifications_id_se
+  ALTER SEQUENCE notifications_id_seq OWNED BY notifications.id;
+  
+  
+++<<<<<<< HEAD
+ +--
+ +-- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+ +--
+ +
+ +CREATE TABLE products (
+ +    id integer NOT NULL,
+ +    name character varying(255),
+ +    description text,
+ +    created_at timestamp without time zone,
+ +    updated_at timestamp without time zone
+ +);
+ +
+ +--
+ +-- Name: products_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+ +--
+diff --cc db/structure.sql
+index 62b8b93,1d0ed96..0000000
+--- a/db/structure.sql
++++ b/db/structure.sql
+@@@ -370,36 -373,6 +373,39 @@@ CREATE SEQUENCE notifications_id_se
+  ALTER SEQUENCE notifications_id_seq OWNED BY notifications.id;
+  
+  
+++<<<<<<< HEAD
+ +--
+ +-- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+ +--
+ +
+ +CREATE TABLE products (
+ +    id integer NOT NULL,
+ +    name character varying(255),
+ +    description text,
+ +    created_at timestamp without time zone,
+ +    updated_at timestamp without time zone
+ +);
+ +
+ +--
+ +-- Name: products_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+ +--
+ +
+ +CREATE SEQUENCE products_id_seq
+ +    START WITH 1
+ +    INCREMENT BY 1
+ +    NO MINVALUE
+ +    NO MAXVALUE
+ +    CACHE 1;
+ +
+ +--
+ +-- Name: products_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+ +--
+ +
+ +ALTER SEQUENCE products_id_seq OWNED BY products.id;
+ +
+ +
+++=======
+++>>>>>>> Exams schedule
+  --
+  -- Name: results; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+  --
+@@@ -624,13 -597,7 +630,17 @@@ ALTER TABLE ONLY feedbacks ALTER COLUM
+  --
+  
+  ALTER TABLE ONLY how_tos ALTER COLUMN id SET DEFAULT nextval('how_tos_id_seq'::regclass);
+++<<<<<<< HEAD
+ +
+ +--
+ +-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+ +--
+ +
+ +ALTER TABLE ONLY notifications ALTER COLUMN id SET DEFAULT nextval('notifications_id_seq'::regclass);
+ +
+++=======
+++>>>>>>> Exams schedule
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ git diff
+diff --cc db/structure.sql
+index 62b8b93,1d0ed96..0000000
+--- a/db/structure.sql
++++ b/db/structure.sql
+@@@ -371,36 -374,6 +374,35 @@@ ALTER SEQUENCE notifications_id_seq OWN
+  
+  
+  --
+ +-- Name: products; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+ +--
+ +
+ +CREATE TABLE products (
+ +    id integer NOT NULL,
+ +    name character varying(255),
+ +    description text,
+ +    created_at timestamp without time zone,
+ +    updated_at timestamp without time zone
+ +);
+ +
+ +--
+ +-- Name: products_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+ +--
+ +
+ +CREATE SEQUENCE products_id_seq
+ +    START WITH 1
+ +    INCREMENT BY 1
+ +    NO MINVALUE
+ +    NO MAXVALUE
+ +    CACHE 1;
+ +
+ +--
+ +-- Name: products_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+ +--
+ +
+ +ALTER SEQUENCE products_id_seq OWNED BY products.id;
+ +
+- 
+ +--
+  -- Name: results; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+  --
+  
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ git add db/structure.sql
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller ((no branch, rebasing exam_controller_exams))$ git rebase --continue
+Applying: Exams schedule
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash pop
+Auto-merging app/assets/stylesheets/custom.css.sass
+CONFLICT (content): Merge conflict in app/assets/stylesheets/custom.css.sass
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git diff
+diff --cc app/assets/stylesheets/custom.css.sass
+index d19784b,ddab447..0000000
+--- a/app/assets/stylesheets/custom.css.sass
++++ b/app/assets/stylesheets/custom.css.sass
+@@@ -109,8 -109,5 +109,11 @@@ bod
+    color: #FFF
+  .custom-text-area
+    height: 106px
+ +
+ +.marquee-custom
+ +  height: 200px
+ +  padding: 19px
+ +  overflow: hidden
+++
++ .custom-heading
++   color: #2FA4E7
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash
+app/assets/stylesheets/custom.css.sass: needs merge
+app/assets/stylesheets/custom.css.sass: needs merge
+app/assets/stylesheets/custom.css.sass: unmerged (c562f1d786ea49ec31ae7dd9c4d61a146e2e357e)
+app/assets/stylesheets/custom.css.sass: unmerged (d19784b7773773cf676cf9bf7399dbc15900357a)
+app/assets/stylesheets/custom.css.sass: unmerged (ddab4471a61c466e1d264a150b84ead49546978f)
+fatal: git-write-tree: error building trees
+Cannot save the current index state
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash pop
+app/assets/stylesheets/custom.css.sass: needs merge
+unable to refresh index
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/models/ability.rb
+#	modified:   app/models/calendar.rb
+#	modified:   app/models/exam.rb
+#	modified:   app/views/calendars/index.html.haml
+#	modified:   app/views/exams/_exams.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/shared/_menu.html.haml
+#
+# Unmerged paths:
+#   (use "git reset HEAD <file>..." to unstage)
+#   (use "git add <file>..." to mark resolution)
+#
+#	both modified:      app/assets/stylesheets/custom.css.sass
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git add app/assets/stylesheets/custom.css.sass
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/assets/stylesheets/custom.css.sass
+#	modified:   app/controllers/calendars_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/models/ability.rb
+#	modified:   app/models/calendar.rb
+#	modified:   app/models/exam.rb
+#	modified:   app/views/calendars/index.html.haml
+#	modified:   app/views/exams/_exams.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/shared/_menu.html.haml
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git commit -m "ui changes for exam and calander"
+[exam_controller_exams 44a39f8] ui changes for exam and calander
+ 10 files changed, 52 insertions(+), 27 deletions(-)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git push origin exam_controller_exams 
+To git@github.com:sri-sankl/exam_controller.git
+ ! [rejected]        exam_controller_exams -> exam_controller_exams (non-fast-forward)
+error: failed to push some refs to 'git@github.com:sri-sankl/exam_controller.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git checkout master 
+Switched to branch 'master'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git merge exam_controller_exams 
+Updating 9b3ca79..44a39f8
+Fast-forward
+ app/assets/stylesheets/custom.css.sass                 |  5 ++++-
+ app/controllers/auto_search_controller.rb              |  1 +
+ app/controllers/calendars_controller.rb                |  4 ++--
+ app/controllers/exams_controller.rb                    | 15 +++++----------
+ app/helpers/exams_helper.rb                            |  1 +
+ app/models/ability.rb                                  | 12 ++++++------
+ app/models/calendar.rb                                 |  2 +-
+ app/models/exam.rb                                     | 14 ++++++++++++++
+ app/views/calendars/_search.html.haml                  |  2 +-
+ app/views/calendars/index.html.haml                    | 25 +++++++++++++------------
+ app/views/exams/{index1.html.haml => _exams.html.haml} | 36 +++++++++++++++++-------------------
+ app/views/exams/_form.html.haml                        | 16 ++++++++++------
+ app/views/exams/_search.html.haml                      | 10 ++++++++++
+ app/views/exams/index.html.haml                        | 47 +----------------------------------------------
+ app/views/shared/_menu.html.haml                       |  4 ++--
+ config/database.yml                                    |  6 ++++++
+ config/routes.rb                                       |  3 ++-
+ db/structure.sql                                       | 32 +++++---------------------------
+ 18 files changed, 101 insertions(+), 134 deletions(-)
+ rename app/views/exams/{index1.html.haml => _exams.html.haml} (62%)
+ create mode 100644 app/views/exams/_search.html.haml
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git push origin master 
+Counting objects: 134, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (28/28), 3.33 KiB | 0 bytes/s, done.
+Total 28 (delta 24), reused 0 (delta 0)
+To git@github.com:sri-sankl/exam_controller.git
+   9b3ca79..44a39f8  master -> master
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ rails s
+=> Booting WEBrick
+=> Rails 4.0.2 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+A server is already running. Check /home/ostryalabs/Muralee/rails_projects/exam_controller/tmp/pids/server.pid.
+Exiting
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git status
+# On branch master
+nothing to commit, working directory clean
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git checkout exam_controller_exams 
+Switched to branch 'exam_controller_exams'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+nothing to commit, working directory clean
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ 
+

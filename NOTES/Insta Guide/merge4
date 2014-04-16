@@ -1,0 +1,184 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash
+Saved working directory and index state WIP on exam_controller_exams: fe2317c exam controller
+HEAD is now at fe2317c exam controller
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git checkout master 
+Switched to branch 'master'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git fetch 
+remote: Counting objects: 17, done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 17 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (17/17), done.
+From github.com:sri-sankl/exam_controller
+   516fc87..dcd8cd0  master     -> origin/master
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git merge origin/master 
+Updating 516fc87..dcd8cd0
+Fast-forward
+ app/assets/images/img10.jpeg            | Bin 0 -> 5437 bytes
+ app/assets/images/img8.jpeg             | Bin 0 -> 7761 bytes
+ app/assets/images/img9.jpeg             | Bin 0 -> 7571 bytes
+ app/assets/stylesheets/custom.css.sass  |   2 ++
+ app/views/feedbacks/_form.html.haml     |   4 ++--
+ app/views/layouts/application.html.haml |   1 +
+ app/views/shared/_footer.html.haml      |   7 +++++++
+ 7 files changed, 12 insertions(+), 2 deletions(-)
+ create mode 100644 app/assets/images/img10.jpeg
+ create mode 100644 app/assets/images/img8.jpeg
+ create mode 100644 app/assets/images/img9.jpeg
+ create mode 100644 app/views/shared/_footer.html.haml
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (master)$ git checkout exam_controller_exams 
+Switched to branch 'exam_controller_exams'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git rebase master 
+First, rewinding head to replay your work on top of it...
+Applying: first commit_exams
+Applying: exam controller
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash pop
+Removing app/views/exams/index1.html.haml
+# On branch exam_controller_exams
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/controllers/auto_search_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/helpers/exams_helper.rb
+#	modified:   app/views/calendars/_search.html.haml
+#	modified:   app/views/calendars/index.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	modified:   app/views/exams/index.html.haml
+#	deleted:    app/views/exams/index1.html.haml
+#	modified:   config/database.yml
+#	modified:   config/routes.rb
+#	modified:   db/structure.sql
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/views/exams/_exams.html.haml
+#	app/views/exams/_search.html.haml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (204830dc63e289b684e54c6d39081a6c277e8338)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git add -i
+           staged     unstaged path
+  1:    unchanged        +1/-0 app/controllers/auto_search_controller.rb
+  2:    unchanged       +4/-10 app/controllers/exams_controller.rb
+  3:    unchanged        +1/-0 app/helpers/exams_helper.rb
+  4:    unchanged        +1/-1 app/views/calendars/_search.html.haml
+  5:    unchanged      +11/-11 app/views/calendars/index.html.haml
+  6:    unchanged        +1/-1 app/views/exams/_form.html.haml
+  7:    unchanged       +1/-46 app/views/exams/index.html.haml
+  8:    unchanged       +0/-53 app/views/exams/index1.html.haml
+  9:    unchanged        +6/-0 config/database.yml
+ 10:    unchanged        +2/-1 config/routes.rb
+ 11:    unchanged      +11/-36 db/structure.sql
+
+*** Commands ***
+  1: status	  2: update	  3: revert	  4: add untracked
+  5: patch	  6: diff	  7: quit	  8: help
+What now> 2
+           staged     unstaged path
+  1:    unchanged        +1/-0 app/controllers/auto_search_controller.rb
+  2:    unchanged       +4/-10 app/controllers/exams_controller.rb
+  3:    unchanged        +1/-0 app/helpers/exams_helper.rb
+  4:    unchanged        +1/-1 app/views/calendars/_search.html.haml
+  5:    unchanged      +11/-11 app/views/calendars/index.html.haml
+  6:    unchanged        +1/-1 app/views/exams/_form.html.haml
+  7:    unchanged       +1/-46 app/views/exams/index.html.haml
+  8:    unchanged       +0/-53 app/views/exams/index1.html.haml
+  9:    unchanged        +6/-0 config/database.yml
+ 10:    unchanged        +2/-1 config/routes.rb
+ 11:    unchanged      +11/-36 db/structure.sql
+Update>> 1-7,9-11
+           staged     unstaged path
+* 1:    unchanged        +1/-0 app/controllers/auto_search_controller.rb
+* 2:    unchanged       +4/-10 app/controllers/exams_controller.rb
+* 3:    unchanged        +1/-0 app/helpers/exams_helper.rb
+* 4:    unchanged        +1/-1 app/views/calendars/_search.html.haml
+* 5:    unchanged      +11/-11 app/views/calendars/index.html.haml
+* 6:    unchanged        +1/-1 app/views/exams/_form.html.haml
+* 7:    unchanged       +1/-46 app/views/exams/index.html.haml
+  8:    unchanged       +0/-53 app/views/exams/index1.html.haml
+* 9:    unchanged        +6/-0 config/database.yml
+*10:    unchanged        +2/-1 config/routes.rb
+*11:    unchanged      +11/-36 db/structure.sql
+Update>> 
+updated 10 paths
+
+*** Commands ***
+  1: status	  2: update	  3: revert	  4: add untracked
+  5: patch	  6: diff	  7: quit	  8: help
+What now> 4
+  1: app/views/exams/_exams.html.haml
+  2: app/views/exams/_search.html.haml
+Add untracked>> 1-2
+* 1: app/views/exams/_exams.html.haml
+* 2: app/views/exams/_search.html.haml
+Add untracked>> 
+added 2 paths
+
+*** Commands ***
+  1: status	  2: update	  3: revert	  4: add untracked
+  5: patch	  6: diff	  7: quit	  8: help
+What now> q
+Bye.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/controllers/auto_search_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/helpers/exams_helper.rb
+#	modified:   app/views/calendars/_search.html.haml
+#	modified:   app/views/calendars/index.html.haml
+#	new file:   app/views/exams/_exams.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	new file:   app/views/exams/_search.html.haml
+#	modified:   app/views/exams/index.html.haml
+#	modified:   config/database.yml
+#	modified:   config/routes.rb
+#	modified:   db/structure.sql
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    app/views/exams/index1.html.haml
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git rm app/views/exams/index1.html.haml
+rm 'app/views/exams/index1.html.haml'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/controllers/auto_search_controller.rb
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   app/helpers/exams_helper.rb
+#	modified:   app/views/calendars/_search.html.haml
+#	modified:   app/views/calendars/index.html.haml
+#	renamed:    app/views/exams/index1.html.haml -> app/views/exams/_exams.html.haml
+#	modified:   app/views/exams/_form.html.haml
+#	new file:   app/views/exams/_search.html.haml
+#	modified:   app/views/exams/index.html.haml
+#	modified:   config/database.yml
+#	modified:   config/routes.rb
+#	modified:   db/structure.sql
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git commit -m "Exams schedule"
+[exam_controller_exams e5ce75a] Exams schedule
+ 12 files changed, 63 insertions(+), 124 deletions(-)
+ rename app/views/exams/{index1.html.haml => _exams.html.haml} (66%)
+ create mode 100644 app/views/exams/_search.html.haml
+ rewrite app/views/exams/index.html.haml (100%)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git push origin exam_controller_exams 
+Warning: Permanently added the RSA host key for IP address '192.30.252.130' to the list of known hosts.
+To git@github.com:sri-sankl/exam_controller.git
+ ! [rejected]        exam_controller_exams -> exam_controller_exams (non-fast-forward)
+error: failed to push some refs to 'git@github.com:sri-sankl/exam_controller.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ 
+

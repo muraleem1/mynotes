@@ -1,0 +1,28 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ rails c
+
+.0^[[C/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+Loading development environment (Rails 4.0.2)
+irb(main):001:0> 
+irb(main):002:0* .0^C
+irb(main):002:0> Exam.first
+  Exam Load (0.9ms)  SELECT "exams".* FROM "exams" ORDER BY "exams"."id" ASC LIMIT 1
+=> #<Exam id: 9, dept: "BIOTECH", semester: "2", subject: "b", date: nil, from: nil, to: nil, created_at: "2014-04-09 09:49:18", updated_at: "2014-04-10 04:38:45">
+irb(main):003:0> e =Exam.first
+  Exam Load (0.6ms)  SELECT "exams".* FROM "exams" ORDER BY "exams"."id" ASC LIMIT 1
+=> #<Exam id: 9, dept: "BIOTECH", semester: "2", subject: "b", date: nil, from: nil, to: nil, created_at: "2014-04-09 09:49:18", updated_at: "2014-04-10 04:38:45">
+irb(main):004:0> e.from
+=> nil
+irb(main):005:0> e =Exam.last
+  Exam Load (0.6ms)  SELECT "exams".* FROM "exams" ORDER BY "exams"."id" DESC LIMIT 1
+=> #<Exam id: 33, dept: "MSIT", semester: "5", subject: "f", date: "2014-04-28", from: "2000-01-01 10:45:00", to: "2000-01-01 11:20:00", created_at: "2014-04-11 05:21:29", updated_at: "2014-04-11 05:27:36">
+irb(main):006:0> e.from
+=> 2000-01-01 10:45:00 UTC
+irb(main):007:0> e.from.strftime('%HH:%MM')
+=> "10H:45M"
+irb(main):008:0> e.from.strftime('%H:%M')
+=> "10:45"
+irb(main):009:0> e.from.strftime('%H:%M')
+=> "10:45"
+irb(main):010:0> e.from.strftime('%H:%M')
+

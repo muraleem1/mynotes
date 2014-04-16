@@ -1,0 +1,56 @@
+Emacs absolute basics
+
+Posted in Programming, Technology	 ¶ Tagged emacs vim	 ¶ Leave a comment
+There is an awesome editor out there which are used by great programmers and then there is an OS which is also getting used as an editor by the not so geeky :)
+
+Hugely inspired or copied from Vim Katas
+
+
+I will write a line and hit C-j to insert a new line
+I will write a line and hit C-a C-j to insert a new line above
+
+I will navigate from beginning of line to end of line using C-a and C-e
+I will go to the top of the document by hitting M-<
+I will go to the first line of the document using M-g g 1
+I will go to the thirty fifth line of the document using M-g g 35
+I will delete the first line by using M-< C-k
+I will paste it back using C-y
+
+I will delete the next line using C-n C-a C-k
+I will delete the entire line using C-S-backspace
+I will paste it back using C-y
+I will repeat previous command using C-x z
+
+I will undo using C-_
+I will undo again using C-_
+
+I will select a line using C-a C-SPC C-e
+I will remove everything using C-w
+I will undo using C-_
+
+I will go down a line using C-n
+I will go up a line using C-p
+I will go left 1 using C-b
+I will go right 1 using C-a
+I will go up four lines using M-4 C-p
+I will go up four lines using C-u 4 C-p
+I will go up four lines using C-u C-p
+I will go down four lines using M-4 C-n
+I will go down four lines using C-u 4 C-n
+I will go down four lines using C-u C-n
+I will go down eight lines using C-u C-u C-n
+
+I will select 2 lines below this using C-n C-a C-SPC C-u 2 C-n
+I will select 4 lines below this using C-n C-a C-SPC C-u C-n
+I will select 3 lines above this using C-p C-e C-SPC C-u 3 C-p
+
+I will save using C-x C-s
+
+I will navigate by word using M-f
+I will navigate by many words using C-u 3 M-f
+I will replace words using M-%
+I will undo those changes using C-_
+I will delete this line using C-S-backspace and undo with C-_
+I will delete these words using C-u 3 M-d
+I will undo using C-_
+I will save and quit with C-x C-c

@@ -1,0 +1,157 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash
+Saved working directory and index state WIP on exam_controller_exams: b980dbe first commit_exams
+HEAD is now at b980dbe first commit_exams
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git checkout exam_controller_muralee
+Switched to branch 'exam_controller_muralee'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git status
+# On branch exam_controller_muralee
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	deleted:    app/BACKUP/calendars.js.cofee
+#	deleted:    app/BACKUP/home.js
+#	deleted:    app/BACKUP/untitled
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/models/exam.rb
+#	app/views/exams/
+#	db/migrate/20140409063315_create_exams.rb
+#	spec/models/exam_spec.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git rm -r app/BACKUP
+rm 'app/BACKUP/calendars.js.cofee'
+rm 'app/BACKUP/home.js'
+rm 'app/BACKUP/untitled'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git status
+# On branch exam_controller_muralee
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    app/BACKUP/calendars.js.cofee
+#	deleted:    app/BACKUP/home.js
+#	deleted:    app/BACKUP/untitled
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/models/exam.rb
+#	app/views/exams/
+#	db/migrate/20140409063315_create_exams.rb
+#	spec/models/exam_spec.rb
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git status
+# On branch exam_controller_muralee
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    app/BACKUP/calendars.js.cofee
+#	deleted:    app/BACKUP/home.js
+#	deleted:    app/BACKUP/untitled
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/controllers/calendars_controller.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/models/exam.rb
+#	app/views/exams/
+#	db/migrate/20140409063315_create_exams.rb
+#	spec/models/exam_spec.rb
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git add app/controllers/calendars_controller.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git status
+# On branch exam_controller_muralee
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	deleted:    app/BACKUP/calendars.js.cofee
+#	deleted:    app/BACKUP/home.js
+#	deleted:    app/BACKUP/untitled
+#	modified:   app/controllers/calendars_controller.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/models/exam.rb
+#	app/views/exams/
+#	db/migrate/20140409063315_create_exams.rb
+#	spec/models/exam_spec.rb
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git commit -m "Deleted Backup Directory"
+[exam_controller_muralee edf1d8b] Deleted Backup Directory
+ 4 files changed, 1 insertion(+), 119 deletions(-)
+ delete mode 100644 app/BACKUP/calendars.js.cofee
+ delete mode 100644 app/BACKUP/home.js
+ delete mode 100644 app/BACKUP/untitled
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git push origin exam_controller_muralee
+Counting objects: 15, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 434 bytes | 0 bytes/s, done.
+Total 5 (delta 4), reused 0 (delta 0)
+To git@github.com:sri-sankl/exam_controller.git
+   5f3cc2a..edf1d8b  exam_controller_muralee -> exam_controller_muralee
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ git checkout exam_controller_exams
+Switched to branch 'exam_controller_exams'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/models/exam.rb
+#	app/views/exams/
+#	db/migrate/20140409063315_create_exams.rb
+#	spec/models/exam_spec.rb
+#
+nothing added to commit but untracked files present (use "git add" to track)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git stash pop
+# On branch exam_controller_exams
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   config/routes.rb
+#	modified:   db/structure.sql
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/models/exam.rb
+#	app/views/exams/
+#	db/migrate/20140409063315_create_exams.rb
+#	spec/models/exam_spec.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (1a1676646b4b6b06dc93568b9d5cdc8ae430d2c5)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_exams)$ git status
+# On branch exam_controller_exams
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/controllers/exams_controller.rb
+#	modified:   config/routes.rb
+#	modified:   db/structure.sql
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/models/exam.rb
+#	app/views/exams/
+#	db/migrate/20140409063315_create_exams.rb
+#	spec/models/exam_spec.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
