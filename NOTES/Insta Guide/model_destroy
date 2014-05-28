@@ -1,0 +1,29 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rails generate model Feature property_id
+      invoke  active_record
+      create    db/migrate/20140507115755_create_features.rb
+      create    app/models/feature.rb
+      invoke    test_unit
+      create      test/models/feature_test.rb
+      create      test/fixtures/features.yml
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rails destroy model Feature
+      invoke  active_record
+      remove    db/migrate/20140507115755_create_features.rb
+      remove    app/models/feature.rb
+      invoke    test_unit
+      remove      test/models/feature_test.rb
+      remove      test/fixtures/features.yml
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

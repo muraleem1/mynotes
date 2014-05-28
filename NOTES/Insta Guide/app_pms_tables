@@ -1,0 +1,21 @@
++++++++++++++++++++++PROPERTIES TABLE+++++++++++++++++++++++++++++++++++++++++
+
+id | property_id | property_type | property_type_code | property_location | property_locality | property_status | property_list_date | property_sold_date | property_owner | property_description | property_min_price | property_max_price | property_area_min | property_area_measure | property_image_path | property_other_details | created_at | updated_at | property_title 
+----+-------------+---------------+--------------------+-------------------+-------------------+-----------------+--------------------+--------------------+----------------+----------------------+--------------------+--------------------+-------------------+-----------------------+---------------------+------------------------+------------+------------+----------------
+(0 rows)
+
+++++++++++++++++++++FEATURES TABLE++++++++++++++++++++++++++++++++++++++++++
+ id | property_id | property_type | property_type_code | property_bhk | property_floors | property_facing | property_carparking | property_parking_area | property_swimpool | property_events | property_libroom | property_spa | property_fitcenter | property_trans | created_at | updated_at 
+----+-------------+---------------+--------------------+--------------+-----------------+-----------------+---------------------+-----------------------+-------------------+-----------------+------------------+--------------+--------------------+----------------+------------+------------
+(0 rows)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

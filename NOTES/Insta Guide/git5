@@ -1,0 +1,458 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+# You have unmerged paths.
+#   (fix conflicts and run "git commit")
+#
+# Changes to be committed:
+#
+#	modified:   Gemfile
+#	modified:   app/assets/stylesheets/application.css.sass
+#	modified:   app/models/property.rb
+#	new file:   app/views/devise/registrations/edit.html.haml
+#	modified:   app/views/devise/registrations/new.html.haml
+#	modified:   app/views/properties/_search_results.html.haml
+#	modified:   app/views/shared/_header.html.haml
+#	modified:   config/environments/development.rb
+#	modified:   config/environments/production.rb
+#
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+#	both modified:   app/controllers/properties_controller.rb
+#	both modified:   config/routes.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/assets/stylesheets/.sass-cache/
+#	app/models/google_map_processor.rb
+#	app/views/shared/_gmap.html.haml
+#	app/views/shared/_search_requests.html.haml
+#	db/migrate/20140514120111_for_google_maps.rb
+#	vendor/assets/javascripts/underscore-min.js
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git add app/controllers/properties_controller.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git add config/routes.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	modified:   Gemfile
+#	modified:   app/assets/stylesheets/application.css.sass
+#	modified:   app/controllers/properties_controller.rb
+#	modified:   app/models/property.rb
+#	new file:   app/views/devise/registrations/edit.html.haml
+#	modified:   app/views/devise/registrations/new.html.haml
+#	modified:   app/views/properties/_search_results.html.haml
+#	modified:   app/views/shared/_header.html.haml
+#	modified:   config/environments/development.rb
+#	modified:   config/environments/production.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/assets/stylesheets/.sass-cache/
+#	app/models/google_map_processor.rb
+#	app/views/shared/_gmap.html.haml
+#	app/views/shared/_search_requests.html.haml
+#	db/migrate/20140514120111_for_google_maps.rb
+#	vendor/assets/javascripts/underscore-min.js
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git commit -m "conflict resolve with swami1"
+[master 1fde7c3] conflict resolve with swami1
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/assets/stylesheets/.sass-cache/
+#	app/models/google_map_processor.rb
+#	app/views/shared/_gmap.html.haml
+#	app/views/shared/_search_requests.html.haml
+#	db/migrate/20140514120111_for_google_maps.rb
+#	vendor/assets/javascripts/underscore-min.js
+#
+nothing added to commit but untracked files present (use "git add" to track)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git stash pop 
+Auto-merging app/models/property.rb
+CONFLICT (content): Merge conflict in app/models/property.rb
+Auto-merging app/controllers/properties_controller.rb
+CONFLICT (content): Merge conflict in app/controllers/properties_controller.rb
+Auto-merging Gemfile
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   Gemfile
+#	modified:   Gemfile.lock
+#	modified:   app/assets/javascripts/application.js
+#	modified:   app/assets/javascripts/property.js
+#	modified:   app/assets/stylesheets/properties.css.scss
+#	modified:   app/views/layouts/application.html.haml
+#	modified:   app/views/properties/buy_requests.html.haml
+#	modified:   app/views/properties/sell_requests.html.haml
+#	modified:   app/views/properties/testpage.html.haml
+#	modified:   db/schema.rb
+#
+# Unmerged paths:
+#   (use "git reset HEAD <file>..." to unstage)
+#   (use "git add <file>..." to mark resolution)
+#
+#	both modified:   app/controllers/properties_controller.rb
+#	both modified:   app/models/property.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/assets/stylesheets/.sass-cache/
+#	app/models/google_map_processor.rb
+#	app/views/shared/_gmap.html.haml
+#	app/views/shared/_search_requests.html.haml
+#	db/migrate/20140514120111_for_google_maps.rb
+#	vendor/assets/javascripts/underscore-min.js
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git reset HEAD
+Unstaged changes after reset:
+M	Gemfile
+M	Gemfile.lock
+M	app/assets/javascripts/application.js
+M	app/assets/javascripts/property.js
+M	app/assets/stylesheets/properties.css.scss
+M	app/controllers/properties_controller.rb
+M	app/models/property.rb
+M	app/views/layouts/application.html.haml
+M	app/views/properties/buy_requests.html.haml
+M	app/views/properties/sell_requests.html.haml
+M	app/views/properties/testpage.html.haml
+M	db/schema.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Gemfile
+#	modified:   Gemfile.lock
+#	modified:   app/assets/javascripts/application.js
+#	modified:   app/assets/javascripts/property.js
+#	modified:   app/assets/stylesheets/properties.css.scss
+#	modified:   app/controllers/properties_controller.rb
+#	modified:   app/models/property.rb
+#	modified:   app/views/layouts/application.html.haml
+#	modified:   app/views/properties/buy_requests.html.haml
+#	modified:   app/views/properties/sell_requests.html.haml
+#	modified:   app/views/properties/testpage.html.haml
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/assets/stylesheets/.sass-cache/
+#	app/models/google_map_processor.rb
+#	app/views/shared/_gmap.html.haml
+#	app/views/shared/_search_requests.html.haml
+#	db/migrate/20140514120111_for_google_maps.rb
+#	vendor/assets/javascripts/underscore-min.js
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git diff
+diff --git a/Gemfile b/Gemfile
+index 41b7b62..4571952 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -66,3 +66,8 @@ gem 'font-awesome-sass'
+ group :development, :test do 
+        gem 'rails_12factor'
+ end
++
++#
++gem "geocoder"
++gem 'gmaps4rails', '2.0.3'
++gem 'gon'
+diff --git a/Gemfile.lock b/Gemfile.lock
+index 7a3af4a..e6aab02 100644
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@ -71,6 +71,11 @@ GEM
+     font-awesome-sass (4.0.3.1)
+       sass (~> 3.2)
+     formatador (0.2.4)
++    geocoder (1.2.1)
++    gmaps4rails (2.0.3)
++    gon (5.0.4)
++      actionpack (>= 2.3.0)
++      json
+     haml (4.0.5)
+       tilt
+     haml-rails (0.5.3)
+@@ -96,14 +101,14 @@ GEM
+       mime-types (~> 1.16)
+       treetop (~> 1.4.8)
+     mime-types (1.25.1)
+-    mini_portile (0.5.3)
++    mini_portile (0.6.0)
+     minitest (4.7.5)
+     multi_json (1.10.0)
+     net-scp (1.2.1)
+       net-ssh (>= 2.6.5)
+-    net-ssh (2.9.0)
+-    nokogiri (1.6.1)
+-      mini_portile (~> 0.5.0)
++    net-ssh (2.9.1)
++    nokogiri (1.6.2.1)
++      mini_portile (= 0.6.0)
+     orm_adapter (0.5.0)
+     pg (0.17.1)
+     polyglot (0.3.4)
+@@ -176,6 +181,9 @@ DEPENDENCIES
+   devise
+   fog
+   font-awesome-sass
++  geocoder
++  gmaps4rails (= 2.0.3)
++  gon
+   haml-rails
+   jbuilder (~> 1.2)
+   jquery-rails
+diff --git a/app/assets/javascripts/application.js b/app/assets/javascripts/application.js
+index c39031a..3ca4bd7 100644
+--- a/app/assets/javascripts/application.js
++++ b/app/assets/javascripts/application.js
+@@ -15,6 +15,10 @@
+ //= require turbolinks
+ //= require jquery.fileupload
+ //= require bootstrap
++
++//= require underscore-min
++//= require gmaps/google
++
+ //= require_tree .
+ 
+ /*
+diff --git a/app/assets/javascripts/property.js b/app/assets/javascripts/property.js
+index 40c0d4e..d1be1cb 100644
+--- a/app/assets/javascripts/property.js
++++ b/app/assets/javascripts/property.js
+@@ -1,5 +1,6 @@
+ $(document ).ready(function() {
+ 
++
+     // To modify Propery as NotListed
+ 
+     $('#listcheck').click(function () {
+@@ -162,4 +163,4 @@ $(document ).ready(function() {
+     });
+ 
+ 
+-})
+\ No newline at end of file
++})
+diff --git a/app/assets/stylesheets/properties.css.scss b/app/assets/stylesheets/properties.css.scss
+index db4b251..23c50eb 100644
+--- a/app/assets/stylesheets/properties.css.scss
++++ b/app/assets/stylesheets/properties.css.scss
+@@ -60,4 +60,30 @@
+ }
+ #myDiv2 p {
+   padding:4px; 
+-}
+\ No newline at end of file
++}
++
++#myDivRequests {
++  border:2px solid #0094ff;
++  -webkit-border-top-left-radius:6px;
++  -webkit-border-top-right-radius:6px;
++  -moz-border-radius-topleft:6px;
++  -moz-border-radius-topright:6px;
++  border-top-left-radius:6px;
++  border-top-right-radius:6px;
++  width:66%;
++  font-size:12pt; /* or whatev\er */
++  //height:500px;
++}
++#myDivRequests h2 {
++  text-align:center;
++  padding:4px;
++  color:#fff;
++  margin:0;
++  background-color:#0094ff;
++  font-size:21pt; /* or whatever */
++}
++#myDivRequests   p {
++  padding:4px; 
++}
++
++#myModal .modal-body {height: 500px;width:500px;overflow: visible;}
+\ No newline at end of file
+diff --git a/app/controllers/properties_controller.rb b/app/controllers/properties_controller.rb
+index b0671ad..44c0edb 100644
+--- a/app/controllers/properties_controller.rb
++++ b/app/controllers/properties_controller.rb
+@@ -19,13 +19,32 @@ class PropertiesController < ApplicationController
+     @properties = Property.paginate(:page => params[:page], :per_page => 5)
+   end
+   
++  def buy_requests
++    @property = Property.new
++    @property.features << Feature.new
++    @properties = Property.all
++  end
++
++  def sell_requests
++    @property = Property.new
++    @property.features << Feature.new
++    @properties = Property.all
++  end
++
+   def testpage
+     @property = Property.new
+     @property.features << Feature.new
+     @properties = Property.all
++    @property = Property.find(37);
++    
++    @map_data = GoogleMapProcessor.build_map_data([@property])
++    gon.gmap_data = @map_data.to_json
++    gon.width = "500px"
++    gon.height = "500px"
+   end
+-  
++
+   def show
++    #show-Action
+   end
+   
+   def new
+@@ -52,10 +71,9 @@ class PropertiesController < ApplicationController
+       render :template => '/devise/sessions/new' 
+     end 
+   end
+-
++  
+   def edit
+     if @property.order_type=="buy"
+-      
+       render "postrequirement"
+     end
+     
+@@ -67,9 +85,8 @@ class PropertiesController < ApplicationController
+   def index
+     @properties=Property.all
+   end
+-  
+-  def update
+-    
++
++  def update        
+     respond_to do |format|
+       if @property.update(property_params)
+         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
+@@ -88,16 +105,12 @@ class PropertiesController < ApplicationController
+       format.json { head :no_content }
+     end
+   end
+-  
+-  
+ 
+   def set_property
+     @property = Property.find(params[:id])
+   end
+   
+- 
+-  
+-
++  private
+   def property_params  
+     params.require(:property).permit(:property_type,:property_type_code,:property_location,
+                                      :property_locality,:property_min_price,:property_max_price,:property_area_min,:property_area_measure,:ord
+diff --git a/app/models/property.rb b/app/models/property.rb
+index 14641fa..9a5cbc1 100644
+--- a/app/models/property.rb
++++ b/app/models/property.rb
+@@ -1,12 +1,28 @@
+ class Property < ActiveRecord::Base
++  geocoded_by :full_address 
++  before_validation :geocode
++  
+   has_many :features,:dependent => :destroy
+   belongs_to :user
+-
++  
+   accepts_nested_attributes_for :features
+   #validates :property_title, :presence => true
+ 
++  
++  def full_address
++    address_list.join(", ")
++  end
++  
++  def address_list
++    address =[]
++    address << self.property_locality
++    address << self.property_location
++  end
++  
++  
+   #validates :property_image_path, :presence => true
+   #validates :imagename, :presence => true
+   mount_uploader :avatar,  AvatarUploader
+-  scope :search, lambda { |id| where(:id => id)}
++  scope :search, lambda { |id| where(:id => id) }
++  
+ end
+diff --git a/app/views/layouts/application.html.haml b/app/views/layouts/application.html.haml
+index 1aeb9c2..41958c2 100644
+--- a/app/views/layouts/application.html.haml
++++ b/app/views/layouts/application.html.haml
+@@ -2,6 +2,7 @@
+ %html
+   %head
+     %title Property
++    = include_gon
+     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+     = javascript_include_tag "application", "data-turbolinks-track" => true
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ 
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Gemfile
+#	modified:   Gemfile.lock
+#	modified:   app/assets/javascripts/application.js
+#	modified:   app/assets/javascripts/property.js
+#	modified:   app/assets/stylesheets/properties.css.scss
+#	modified:   app/controllers/properties_controller.rb
+#	modified:   app/models/property.rb
+#	modified:   app/views/layouts/application.html.haml
+#	modified:   app/views/properties/buy_requests.html.haml
+#	modified:   app/views/properties/sell_requests.html.haml
+#	modified:   app/views/properties/testpage.html.haml
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	app/assets/stylesheets/.sass-cache/
+#	app/models/google_map_processor.rb
+#	app/views/shared/_gmap.html.haml
+#	app/views/shared/_search_requests.html.haml
+#	db/migrate/20140514120111_for_google_maps.rb
+#	vendor/assets/javascripts/underscore-min.js
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rail
+
+
+
+
+
+
+
+
+

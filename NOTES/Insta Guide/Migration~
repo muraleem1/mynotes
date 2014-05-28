@@ -15,6 +15,28 @@ sudo -u postgres createuser ostryalabs
 sudo -u postgres createdb -O ostryalabs my_project_development
 
 run->rake db:migrate
+***** in postgress***************
+postgres=# CREATE DATABASE sample_app_test OWNER sample_app;
+CREATE DATABASE
+postgres=# CREATE DATABASE sample_app_production OWNER sample_app;
+CREATE DATABASE
+postgres=# \l
+                                    List of databases
+          Name          |   Owner    | Encoding | Collate | Ctype |   Access privileges   
+------------------------+------------+----------+---------+-------+-----------------------
+ dbdemoapp              | muralee    | UTF8     | en_IN   | en_IN | 
+ my_project_development | ostryalabs | UTF8     | en_IN   | en_IN | 
+ postgres               | postgres   | UTF8     | en_IN   | en_IN | 
+ sample_app_development | sample_app | UTF8     | en_IN   | en_IN | 
+ sample_app_production  | sample_app | UTF8     | en_IN   | en_IN | 
+ sample_app_test        | sample_app | UTF8     | en_IN   | en_IN | 
+ template0              | postgres   | UTF8     | en_IN   | en_IN | =c/postgres          +
+                        |            |          |         |       | postgres=CTc/postgres
+ template1              | postgres   | UTF8     | en_IN   | en_IN | =c/postgres          +
+                        |            |          |         |       | postgres=CTc/postgres
+(8 rows)
+******************************
+
 +++++++++++++++++++++++++++Rename Column++++++++++++++++++++++++++++++++++++
 rails generate migration FixColumnName
  
@@ -61,7 +83,46 @@ class FixColumnType < ActiveRecord::Migration
 end
 
 rake db:migrate
-++++++++++++++++Remove Migration+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++Remove Migration++++++++++++++++++++++++
 rails d migration FixColumnType1
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+stryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rails g migration RemoveColumns 
+      invoke  active_record
+      create    db/migrate/20140507113833_remove_columns.rb
+
+++++++++++++++++++++++++++++In Remove Columns Migration File++++++++++++++++++++++++++++++++++++++++++++++++++++
+class RemoveColumns < ActiveRecord::Migration
+  def change
+  	change_table :properties do |t|
+  	t.remove :property_address      
+  	t.remove :property_name
+  	t.remove :property_transaction
+  	t.remove :_type
+    	t.remove :property_facing
+  	t.remove :property_posted_by
+  	t.remove :property_area_max
+  	t.remove :property_bhk		<--to remove a column>>
+    	t.string :property_title       	<--to add a column >>
+	end
+  end
+end
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rake db:migrate
+==  RemoveColumns: migrating ==================================================
+-- change_table(:properties)
+   -> 0.0480s
+==  RemoveColumns: migrated (0.0481s) =========================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 

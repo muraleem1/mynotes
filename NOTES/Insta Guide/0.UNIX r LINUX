@@ -18,6 +18,7 @@ none            5.0M     0  5.0M   0% /run/lock
 none            3.9G  2.5M  3.9G   1% /run/shm
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/property (property_muralee)$ gedit /var/log/auth.log
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

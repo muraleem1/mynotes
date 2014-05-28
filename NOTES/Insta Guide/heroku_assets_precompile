@@ -1,0 +1,215 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git push heroku master  
+Fetching repository, done.
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 391 bytes | 0 bytes/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+
+-----> Ruby app detected
+-----> Compiling Ruby/Rails
+-----> Using Ruby version: ruby-2.0.0
+-----> Installing dependencies using 1.5.2
+       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+       Using rake (10.3.1)
+       Using minitest (4.7.5)
+       Using thread_safe (0.3.3)
+       Using i18n (0.6.9)
+       Using multi_json (1.10.0)
+       Using tzinfo (0.3.39)
+       Using builder (3.1.4)
+       Using erubis (2.7.0)
+       Using mime-types (1.25.1)
+       Using polyglot (0.3.4)
+       Using activerecord-deprecated_finders (1.0.3)
+       Using arel (4.0.2)
+       Using sass (3.2.19)
+       Using coffee-script-source (1.7.0)
+       Using execjs (2.0.2)
+       Using rack (1.5.2)
+       Using thor (0.19.1)
+       Using tilt (1.4.1)
+       Using hike (1.2.3)
+       Using pg (0.17.1)
+       Using json (1.8.1)
+       Using bundler (1.5.2)
+       Using treetop (1.4.15)
+       Using activesupport (4.0.3)
+       Using bootstrap-sass (3.0.3.0)
+       Using font-awesome-sass (4.0.3.1)
+       Using rack-test (0.6.2)
+       Using haml (4.0.5)
+       Using sprockets (2.11.0)
+       Using rdoc (4.1.1)
+       Using coffee-script (2.2.0)
+       Using actionpack (4.0.3)
+       Using mail (2.5.4)
+       Using activemodel (4.0.3)
+       Using uglifier (2.5.0)
+       Using jbuilder (1.5.3)
+       Using railties (4.0.3)
+       Using sdoc (0.4.0)
+       Using sprockets-rails (2.0.1)
+       Using actionmailer (4.0.3)
+       Using activerecord (4.0.3)
+       Using coffee-rails (4.0.1)
+       Using sass-rails (4.0.3)
+       Using haml-rails (0.5.3)
+       Using turbolinks (2.2.2)
+       Using jquery-rails (3.1.0)
+       Using rails (4.0.3)
+       Your bundle is complete!
+       Gems in the groups development and test were not installed.
+       It was installed into ./vendor/bundle
+       Bundle completed (0.99s)
+       Cleaning up the bundler cache.
+-----> Writing config/database.yml to read from DATABASE_URL
+       Detected manifest file, assuming assets were compiled locally
+-----> WARNINGS:
+       No Procfile detected, using the default web server (webrick)
+       https://devcenter.heroku.com/articles/ruby-default-web-server
+-----> Discovering process types
+       Procfile declares types -> (none)
+       Default types for Ruby  -> console, rake, web, worker
+
+-----> Compressing... done, 23.1MB
+-----> Launching... done, v15
+       http://frozen-atoll-1980.herokuapp.com/ deployed to Heroku
+
+To git@heroku.com:frozen-atoll-1980.git
+   db110f1..2cfd2b8  master -> master
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+nothing to commit, working directory clean
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rake assets:precompile
+I, [2014-05-09T18:45:17.473046 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/10-21c4c55e50f02b96ae65854c93940b64.jpg
+I, [2014-05-09T18:45:17.473763 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/11-fb70fcffa963ede1a315747354358248.jpg
+I, [2014-05-09T18:45:17.480745 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/12-f42b0e18368097710ad05c256df07460.jpg
+I, [2014-05-09T18:45:17.482515 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/13-a1da76530c2f52c762fb09b82d8194cf.jpg
+I, [2014-05-09T18:45:17.483900 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/14-00bfe59e8c53960c72be8f64da5c6706.jpg
+I, [2014-05-09T18:45:17.491782 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/15-98fc94ad9b490e3ce02df9730b9c2459.jpg
+I, [2014-05-09T18:45:17.496781 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/2-b094f90bfe7bf4ad964043984c799725.jpg
+I, [2014-05-09T18:45:17.498348 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/21-5731dc2191c7413f5f5144d8f7bcbe7c.jpg
+I, [2014-05-09T18:45:17.499752 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/22-b77c57ac6db1836017bf402a37b0bf5c.jpg
+I, [2014-05-09T18:45:17.500388 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/23-884c6fccad1ba346c00baf07c3c658b4.jpg
+I, [2014-05-09T18:45:17.501694 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/24-b9b769711d5f3b4d7279d5f4dcb85afb.jpg
+I, [2014-05-09T18:45:17.503356 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/25-495147eb710b799c92645c5f6c6f8389.jpg
+I, [2014-05-09T18:45:17.504861 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/26-cf9ac272e8bcdc508536e3d29911ec0b.jpg
+I, [2014-05-09T18:45:17.516191 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/3-e4c9a026b5a35ab3fadc01d885acf44b.jpg
+I, [2014-05-09T18:45:17.517910 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/31-01102a06e78170c0b301c27b0f88c0c1.jpg
+I, [2014-05-09T18:45:17.519238 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/32-9d6851403c88dd163fbf88fc3d30c16e.jpg
+I, [2014-05-09T18:45:17.520708 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/33-98f59bae11159082a6d69991a8d4ad4c.jpg
+I, [2014-05-09T18:45:17.528868 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/34-aa8a54b2935ca3c1cec5aacfab4d5d58.jpg
+I, [2014-05-09T18:45:17.530094 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/35-8f745e085109fdc2e2811c47a83a7ac0.jpg
+I, [2014-05-09T18:45:17.530717 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/36-e1f995a33124f58f660ea451724bf7a9.jpg
+I, [2014-05-09T18:45:17.532719 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/41-0d6b74325aeeb12e1a687d196a470df3.jpg
+I, [2014-05-09T18:45:17.534065 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/42-b5eefc48127d72d41e2d11386c1ea358.jpg
+I, [2014-05-09T18:45:17.541314 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/43-732b123f7dd8c4b451022dcfd37a96b7.jpg
+I, [2014-05-09T18:45:17.542733 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/44-4818cf718de7989ff9a4dfbbc739469b.jpg
+I, [2014-05-09T18:45:17.544460 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/45-678b3d23ec001eac6db3f587b7829e7a.jpg
+I, [2014-05-09T18:45:17.545104 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/46-94e6ef71cc155eb9aaa10842740308a4.jpg
+I, [2014-05-09T18:45:17.546651 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/47-b1e821dd2533bbe7120e3bcb8ae6e10f.jpg
+I, [2014-05-09T18:45:17.547997 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/48-3bb7aa0bac7a9bc5d01a746dc8cf9352.jpg
+I, [2014-05-09T18:45:17.549447 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/49-71ec3c1c2ebffeed5b75edea09a0a3f6.jpg
+I, [2014-05-09T18:45:17.550675 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/51-18dcb2b0936b064a9db11060ba3b3f08.jpg
+I, [2014-05-09T18:45:17.551968 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/6-52b03f4d9ba84d7f06b267a6e0fed646.jpg
+I, [2014-05-09T18:45:17.557880 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/8-23b672d3b729c4d86129fb8ac68fea9c.jpg
+I, [2014-05-09T18:45:17.559192 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/9-1a5bca5016ba1b9280dfedc2b7cdbb49.jpg
+I, [2014-05-09T18:45:17.560464 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/91-842c798d067915adb7dc2eb3ddd764d3.jpg
+I, [2014-05-09T18:45:17.562016 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/image1-6e5e7a7b8abb53d998fedf87fd526d81.jpg
+I, [2014-05-09T18:45:17.563847 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo-93d88fc3a9a9581afdb9f935ecaf46d7.jpg
+I, [2014-05-09T18:45:17.565729 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo1-5354ccbd790cf892985cf538b112e811.jpg
+I, [2014-05-09T18:45:17.567395 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo2-0910e55a2412d045c700838b75323aed.jpg
+I, [2014-05-09T18:45:17.569375 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo3-547c6fc899b197b499bbfa68892ab786.jpg
+I, [2014-05-09T18:45:17.571292 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo4-cb0060d243416a5bbab4ba9a852f5054.jpg
+I, [2014-05-09T18:45:17.572677 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo5-dcedae6e039265c4ce82abd32e4e9e24.jpg
+I, [2014-05-09T18:45:17.573433 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo6-7930dfd426a61b29bcd735fa802dbfef.jpg
+I, [2014-05-09T18:45:17.598307 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo7-f9d1bf20d020f3b3b17ba67d9debcf3f.jpg
+I, [2014-05-09T18:45:17.599131 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/logo_659978_web-3662cac97efad8136701c220ab9b660d.jpg
+I, [2014-05-09T18:45:17.600441 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/z1-0b30545f8ad182fe5373af7fa57fb221.jpg
+I, [2014-05-09T18:45:17.601714 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/z2-3b30f3691500d2abc77878e1e936eaac.jpg
+I, [2014-05-09T18:45:17.603027 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/z3-eb8cba5410652afa95175429cc06f496.jpg
+I, [2014-05-09T18:45:17.609075 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/z5-1a2d05aa62664fcad4bfbfbd77f6cb65.jpg
+I, [2014-05-09T18:45:17.614580 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/z6-8633cd814411f28fb38573e7ced12a8e.jpg
+I, [2014-05-09T18:45:17.615887 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/z7-a308eedcaf9889fee086b3f7ef06391b.jpg
+I, [2014-05-09T18:45:17.618359 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/z9-f66b55080d570162e4f90e963859d426.jpg
+I, [2014-05-09T18:45:17.637376 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/application-152350b1a703b93aac190899f410cd1a.js
+I, [2014-05-09T18:45:17.695082 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/application-0470e5a87085afd574226684bf4c2cb9.css
+I, [2014-05-09T18:45:17.705435 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/fontawesome-webfont-57144723bcb14fce1497e62ea6b81fbe.eot
+I, [2014-05-09T18:45:17.713617 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/fontawesome-webfont-ca4357fcad960eba2cdbcc610be8353f.svg
+I, [2014-05-09T18:45:17.715777 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/fontawesome-webfont-583792bbfa3fd24f9ba26bd5d5741afe.ttf
+I, [2014-05-09T18:45:17.716633 #7222]  INFO -- : Writing /home/ostryalabs/Muralee/rails_projects/pms/public/assets/fontawesome-webfont-ad8c4e159be2c0459c78484f3a0a451e.woff
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   public/assets/manifest-46eb2dfd90e94ba747af15b8ee3b3180.json
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	public/assets/10-21c4c55e50f02b96ae65854c93940b64.jpg
+#	public/assets/11-fb70fcffa963ede1a315747354358248.jpg
+#	public/assets/12-f42b0e18368097710ad05c256df07460.jpg
+#	public/assets/13-a1da76530c2f52c762fb09b82d8194cf.jpg
+#	public/assets/14-00bfe59e8c53960c72be8f64da5c6706.jpg
+#	public/assets/15-98fc94ad9b490e3ce02df9730b9c2459.jpg
+#	public/assets/2-b094f90bfe7bf4ad964043984c799725.jpg
+#	public/assets/21-5731dc2191c7413f5f5144d8f7bcbe7c.jpg
+#	public/assets/22-b77c57ac6db1836017bf402a37b0bf5c.jpg
+#	public/assets/23-884c6fccad1ba346c00baf07c3c658b4.jpg
+#	public/assets/24-b9b769711d5f3b4d7279d5f4dcb85afb.jpg
+#	public/assets/25-495147eb710b799c92645c5f6c6f8389.jpg
+#	public/assets/26-cf9ac272e8bcdc508536e3d29911ec0b.jpg
+#	public/assets/3-e4c9a026b5a35ab3fadc01d885acf44b.jpg
+#	public/assets/31-01102a06e78170c0b301c27b0f88c0c1.jpg
+#	public/assets/32-9d6851403c88dd163fbf88fc3d30c16e.jpg
+#	public/assets/33-98f59bae11159082a6d69991a8d4ad4c.jpg
+#	public/assets/34-aa8a54b2935ca3c1cec5aacfab4d5d58.jpg
+#	public/assets/35-8f745e085109fdc2e2811c47a83a7ac0.jpg
+#	public/assets/36-e1f995a33124f58f660ea451724bf7a9.jpg
+#	public/assets/41-0d6b74325aeeb12e1a687d196a470df3.jpg
+#	public/assets/42-b5eefc48127d72d41e2d11386c1ea358.jpg
+#	public/assets/43-732b123f7dd8c4b451022dcfd37a96b7.jpg
+#	public/assets/44-4818cf718de7989ff9a4dfbbc739469b.jpg
+#	public/assets/45-678b3d23ec001eac6db3f587b7829e7a.jpg
+#	public/assets/46-94e6ef71cc155eb9aaa10842740308a4.jpg
+#	public/assets/47-b1e821dd2533bbe7120e3bcb8ae6e10f.jpg
+#	public/assets/48-3bb7aa0bac7a9bc5d01a746dc8cf9352.jpg
+#	public/assets/49-71ec3c1c2ebffeed5b75edea09a0a3f6.jpg
+#	public/assets/51-18dcb2b0936b064a9db11060ba3b3f08.jpg
+#	public/assets/6-52b03f4d9ba84d7f06b267a6e0fed646.jpg
+#	public/assets/8-23b672d3b729c4d86129fb8ac68fea9c.jpg
+#	public/assets/9-1a5bca5016ba1b9280dfedc2b7cdbb49.jpg
+#	public/assets/91-842c798d067915adb7dc2eb3ddd764d3.jpg
+#	public/assets/application-0470e5a87085afd574226684bf4c2cb9.css
+#	public/assets/application-0470e5a87085afd574226684bf4c2cb9.css.gz
+#	public/assets/application-152350b1a703b93aac190899f410cd1a.js
+#	public/assets/application-152350b1a703b93aac190899f410cd1a.js.gz
+#	public/assets/fontawesome-webfont-57144723bcb14fce1497e62ea6b81fbe.eot
+#	public/assets/fontawesome-webfont-583792bbfa3fd24f9ba26bd5d5741afe.ttf
+#	public/assets/fontawesome-webfont-ad8c4e159be2c0459c78484f3a0a451e.woff
+#	public/assets/fontawesome-webfont-ca4357fcad960eba2cdbcc610be8353f.svg
+#	public/assets/image1-6e5e7a7b8abb53d998fedf87fd526d81.jpg
+#	public/assets/logo-93d88fc3a9a9581afdb9f935ecaf46d7.jpg
+#	public/assets/logo1-5354ccbd790cf892985cf538b112e811.jpg
+#	public/assets/logo2-0910e55a2412d045c700838b75323aed.jpg
+#	public/assets/logo3-547c6fc899b197b499bbfa68892ab786.jpg
+#	public/assets/logo4-cb0060d243416a5bbab4ba9a852f5054.jpg
+#	public/assets/logo5-dcedae6e039265c4ce82abd32e4e9e24.jpg
+#	public/assets/logo6-7930dfd426a61b29bcd735fa802dbfef.jpg
+#	public/assets/logo7-f9d1bf20d020f3b3b17ba67d9debcf3f.jpg
+#	public/assets/logo_659978_web-3662cac97efad8136701c220ab9b660d.jpg
+#	public/assets/z1-0b30545f8ad182fe5373af7fa57fb221.jpg
+#	public/assets/z2-3b30f3691500d2abc77878e1e936eaac.jpg
+#	public/assets/z3-eb8cba5410652afa95175429cc06f496.jpg
+#	public/assets/z5-1a2d05aa62664fcad4bfbfbd77f6cb65.jpg
+#	public/assets/z6-8633cd814411f28fb38573e7ced12a8e.jpg
+#	public/assets/z7-a308eedcaf9889fee086b3f7ef06391b.jpg
+#	public/assets/z9-f66b55080d570162e4f90e963859d426.jpg
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ 
+

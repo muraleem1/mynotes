@@ -83,7 +83,46 @@ class FixColumnType < ActiveRecord::Migration
 end
 
 rake db:migrate
-++++++++++++++++Remove Migration+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++Remove Migration++++++++++++++++++++++++
 rails d migration FixColumnType1
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+stryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rails g migration RemoveColumns 
+      invoke  active_record
+      create    db/migrate/20140507113833_remove_columns.rb
+
+++++++++++++++++++++++++++++In Remove Columns Migration File++++++++++++++++++++++++++++++++++++++++++++++++++++
+class RemoveColumns < ActiveRecord::Migration
+  def change
+  	change_table :properties do |t|
+  	t.remove :property_address      
+  	t.remove :property_name
+  	t.remove :property_transaction
+  	t.remove :_type
+    	t.remove :property_facing
+  	t.remove :property_posted_by
+  	t.remove :property_area_max
+  	t.remove :property_bhk		<--to remove a column>>
+    	t.string :property_title       	<--to add a column >>
+	end
+  end
+end
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ rake db:migrate
+==  RemoveColumns: migrating ==================================================
+-- change_table(:properties)
+   -> 0.0480s
+==  RemoveColumns: migrated (0.0481s) =========================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 

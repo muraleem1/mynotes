@@ -1,0 +1,10 @@
+irb(main):068:0> (('A'..'Z').to_a+('a'..'z').to_a+(1..9).to_a+%w(@ # $ ! ^ & * _ % < >)).shuffle[1..9].join 
+=> "D7CXcj_KJ"
+irb(main):069:0> (('A'..'Z').to_a+('a'..'z').to_a+(1..9).to_a+%w(@ # $ ! ^ & * _ % < >)).shuffle[1..9].join 
+=> "u@<h!peHY"
+irb(main):070:0> (('A'..'Z').to_a+('a'..'z').to_a+(1..9).to_a+%w(@ # $ ! ^ & * _ % < >)).shuffle[1..9].join 
+=> "E>IX!YBfk"
+irb(main):071:0> (('A'..'Z').to_a+('a'..'z').to_a+(1..9).to_a+%w(@ # $ ! ^ & * _ % < >)).shuffle[1..9].join 
+=> "Q^fLg*sKX"
+irb(main):072:0> 
+

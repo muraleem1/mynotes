@@ -7,7 +7,11 @@ ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controlle
       create      test/models/calendar_test.rb
       create      test/fixtures/calendars.yml
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/exam_controller (exam_controller_muralee)$ rake db:migrate
+==  CreateCalendars: migrating ===============================================
+-- create_table(:calendars)
+   -> 0.2385s
+==  CreateCalendars: migrated (0.2386s) ======================================
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 

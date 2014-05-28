@@ -1,0 +1,20 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ bundle exec whenever
+PATH=/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bin:/home/ostryalabs/.rbenv/versions/2.0.0-p451/bin:/home/ostryalabs/.rbenv/libexec:/home/ostryalabs/.rbenv/plugins/ruby-build/bin:/usr/local/heroku/bin:/home/ostryalabs/.rbenv/bin:/home/ostryalabs/.rbenv/shims:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+2 13 * * * /bin/bash -l -c 'cd /home/ostryalabs/Muralee/rails_projects/pms && bin/rails runner -e development '\''PropertyMailer.match_property.deliver'\'' >> /home/ostryalabs/Desktop/cron.log 2>&1'
+
+## [message] Above is your schedule file converted to cron syntax; your crontab file was not updated.
+## [message] Run `whenever --help' for more options.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ whenever --update-crontab store
+whenever: command not found
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ whenever --help
+whenever: command not found
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ bundle exec gem list whenever
+
+*** LOCAL GEMS ***
+
+whenever (0.9.2)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ whenever --update-crontab store
+whenever: command not found
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/pms (master)$ bundle exec whenever --update-crontab store
+
