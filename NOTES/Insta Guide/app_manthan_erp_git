@@ -1,7 +1,12 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git remote rm origin
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git checkout -b  manthan_muralee
+Switched to a new branch 'manthan_muralee'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (manthan_muralee)$ git co master 
+Switched to branch 'master'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git co manthan_muralee 
+Switched to branch 'manthan_muralee'
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 

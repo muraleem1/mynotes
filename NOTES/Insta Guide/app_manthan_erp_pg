@@ -1,0 +1,73 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (manthan_muralee)$ psql -U muralee -d manthan_development -h 127.0.0.1
+psql (9.3.4)
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+Type "help" for help.
+
+manthan_development=# \l
+                                         List of databases
+            Name             |      Owner      | Encoding | Collate | Ctype |   Access privileges   
+-----------------------------+-----------------+----------+---------+-------+-----------------------
+ dbdemoapp                   | muralee         | UTF8     | en_IN   | en_IN | 
+ exam_controller_development | exam_controller | UTF8     | en_IN   | en_IN | 
+ exam_controller_test        | exam_controller | UTF8     | en_IN   | en_IN | 
+ exam_report_production      | exam_report     | UTF8     | en_IN   | en_IN | 
+ manthan_development         | muralee         | UTF8     | en_IN   | en_IN | 
+ manthan_test                | muralee         | UTF8     | en_IN   | en_IN | 
+ my_project_development      | ostryalabs      | UTF8     | en_IN   | en_IN | 
+ postgres                    | postgres        | UTF8     | en_IN   | en_IN | 
+ property_development        | muralee         | UTF8     | en_IN   | en_IN | 
+ property_test               | muralee         | UTF8     | en_IN   | en_IN | 
+ rbvrr_development           | rbvrr           | UTF8     | en_IN   | en_IN | 
+ rbvrr_test                  | rbvrr           | UTF8     | en_IN   | en_IN | 
+ sample_app_development      | sample_app      | UTF8     | en_IN   | en_IN | 
+ sample_app_production       | sample_app      | UTF8     | en_IN   | en_IN | 
+ sample_app_test             | sample_app      | UTF8     | en_IN   | en_IN | 
+ template0                   | postgres        | UTF8     | en_IN   | en_IN | =c/postgres          +
+                             |                 |          |         |       | postgres=CTc/postgres
+ template1                   | postgres        | UTF8     | en_IN   | en_IN | =c/postgres          +
+                             |                 |          |         |       | postgres=CTc/postgres
+(17 rows)
+
+manthan_development=# \d
+                    List of relations
+ Schema |            Name             |   Type   |  Owner  
+--------+-----------------------------+----------+---------
+ public | fee_grade_buckets           | table    | muralee
+ public | fee_grade_buckets_id_seq    | sequence | muralee
+ public | fee_types                   | table    | muralee
+ public | fee_types_id_seq            | sequence | muralee
+ public | grade_wise_fees             | table    | muralee
+ public | grade_wise_fees_id_seq      | sequence | muralee
+ public | monthly_pdc_amounts         | table    | muralee
+ public | monthly_pdc_amounts_id_seq  | sequence | muralee
+ public | pg_search_documents         | table    | muralee
+ public | pg_search_documents_id_seq  | sequence | muralee
+ public | post_dated_cheques          | table    | muralee
+ public | post_dated_cheques_id_seq   | sequence | muralee
+ public | schema_migrations           | table    | muralee
+ public | students                    | table    | muralee
+ public | students_id_seq             | sequence | muralee
+ public | term_definitions            | table    | muralee
+ public | term_definitions_id_seq     | sequence | muralee
+ public | term_wise_grade_fees        | table    | muralee
+ public | term_wise_grade_fees_id_seq | sequence | muralee
+(19 rows)
+
+
+manthan_development=# \du
+                                List of roles
+    Role name    |                   Attributes                   | Member of 
+-----------------+------------------------------------------------+-----------
+ exam_controller | Superuser, Create role, Create DB              | {}
+ exam_report     | Superuser, Create role, Create DB              | {}
+ muralee         | Superuser, Create role, Create DB              | {}
+ ostryalabs      |                                                | {}
+ postgres        | Superuser, Create role, Create DB, Replication | {}
+ postgres_user   |                                                | {}
+ rbvrr           | Superuser, Create role, Create DB              | {}
+ sample_app      | Superuser, Create role, Create DB              | {}
+
+manthan_development=# 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

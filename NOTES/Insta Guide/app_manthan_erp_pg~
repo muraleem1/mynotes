@@ -1,0 +1,48 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (manthan_muralee)$ psql -U muralee -d manthan_development -h 127.0.0.1
+psql (9.3.4)
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+Type "help" for help.
+
+manthan_development=# \l
+                                         List of databases
+            Name             |      Owner      | Encoding | Collate | Ctype |   Access privileges   
+-----------------------------+-----------------+----------+---------+-------+-----------------------
+ dbdemoapp                   | muralee         | UTF8     | en_IN   | en_IN | 
+ exam_controller_development | exam_controller | UTF8     | en_IN   | en_IN | 
+ exam_controller_test        | exam_controller | UTF8     | en_IN   | en_IN | 
+ exam_report_production      | exam_report     | UTF8     | en_IN   | en_IN | 
+ manthan_development         | muralee         | UTF8     | en_IN   | en_IN | 
+ manthan_test                | muralee         | UTF8     | en_IN   | en_IN | 
+ my_project_development      | ostryalabs      | UTF8     | en_IN   | en_IN | 
+ postgres                    | postgres        | UTF8     | en_IN   | en_IN | 
+ property_development        | muralee         | UTF8     | en_IN   | en_IN | 
+ property_test               | muralee         | UTF8     | en_IN   | en_IN | 
+ rbvrr_development           | rbvrr           | UTF8     | en_IN   | en_IN | 
+ rbvrr_test                  | rbvrr           | UTF8     | en_IN   | en_IN | 
+ sample_app_development      | sample_app      | UTF8     | en_IN   | en_IN | 
+ sample_app_production       | sample_app      | UTF8     | en_IN   | en_IN | 
+ sample_app_test             | sample_app      | UTF8     | en_IN   | en_IN | 
+ template0                   | postgres        | UTF8     | en_IN   | en_IN | =c/postgres          +
+                             |                 |          |         |       | postgres=CTc/postgres
+ template1                   | postgres        | UTF8     | en_IN   | en_IN | =c/postgres          +
+                             |                 |          |         |       | postgres=CTc/postgres
+(17 rows)
+
+manthan_development=# \d
+manthan_development=# \du
+                                List of roles
+    Role name    |                   Attributes                   | Member of 
+-----------------+------------------------------------------------+-----------
+ exam_controller | Superuser, Create role, Create DB              | {}
+ exam_report     | Superuser, Create role, Create DB              | {}
+ muralee         | Superuser, Create role, Create DB              | {}
+ ostryalabs      |                                                | {}
+ postgres        | Superuser, Create role, Create DB, Replication | {}
+ postgres_user   |                                                | {}
+ rbvrr           | Superuser, Create role, Create DB              | {}
+ sample_app      | Superuser, Create role, Create DB              | {}
+
+manthan_development=# 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

@@ -1,0 +1,50 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (manthan_muralee)$ rails generate model Grade grade:string
+      invoke  active_record
+      create    db/migrate/20140529112825_create_grades.rb
+      create    app/models/grade.rb
+      invoke    rspec
+      create      spec/models/grade_spec.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (manthan_muralee)$ rails generate model Section section:string
+      invoke  active_record
+      create    db/migrate/20140529112846_create_sections.rb
+      create    app/models/section.rb
+      invoke    rspec
+      create      spec/models/section_spec.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (manthan_muralee)$ rails generate model Subject subject:string
+      invoke  active_record
+      create    db/migrate/20140529112929_create_subjects.rb
+      create    app/models/subject.rb
+      invoke    rspec
+      create      spec/models/subject_spec.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (manthan_muralee)$ rake db:migrate
+==  CreateGrades: migrating ===================================================
+-- create_table(:grades)
+   -> 0.2514s
+==  CreateGrades: migrated (0.2515s) ==========================================
+
+==  CreateSections: migrating =================================================
+-- create_table(:sections)
+   -> 0.0286s
+==  CreateSections: migrated (0.0287s) ========================================
+
+==  CreateSubjects: migrating =================================================
+-- create_table(:subjects)
+   -> 0.0269s
+==  CreateSubjects: migrated (0.0270s) ========================================
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
