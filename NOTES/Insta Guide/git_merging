@@ -1,0 +1,137 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git status
+# On branch academic_timetable
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/assets/javascripts/angular_modules/controllers/timetables.js
+#	modified:   app/assets/javascripts/angular_modules/services/gradeservice.js
+#	modified:   app/assets/stylesheets/email.css
+#	modified:   app/assets/stylesheets/time_tables.css.scss
+#	modified:   app/controllers/time_tables_controller.rb
+#	modified:   app/models/section_master.rb
+#	modified:   app/views/time_tables/_period_form.html.haml
+#	modified:   config/routes.rb
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140617060210_insert_grade_master_idin_section_masters.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git stash
+\Saved working directory and index state WIP on academic_timetable: 0888093 conflicts resolved with priyabranch
+HEAD is now at 0888093 conflicts resolved with priyabranch
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git status
+# On branch academic_timetable
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140617060210_insert_grade_master_idin_section_masters.rb
+#
+nothing added to commit but untracked files present (use "git add" to track)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git co master
+Switched to branch 'master'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git fetch
+remote: Counting objects: 88, done.
+remote: Compressing objects: 100% (85/85), done.
+remote: Total 88 (delta 18), reused 0 (delta 0)
+Unpacking objects: 100% (88/88), done.
+From github.com:sri-sankl/manthan_erp
+ * [new branch]      assessment -> origin/assessment
+   0888093..5bb98e7  master     -> origin/master
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git merge origin/master
+Updating 0888093..5bb98e7
+Fast-forward
+ .gitignore                                                       | 32 +++++++++++++++++++++++++++++++-
+ app/controllers/grade_wise_fees_controller.rb                    |  5 +++--
+ app/controllers/student_masters_controller.rb                    |  4 ++--
+ app/helpers/application_helper.rb                                |  3 +--
+ app/jobs/fee_struct_mailing_job.rb                               | 10 ++++++----
+ app/mailers/fee_alerts_mailer.rb                                 |  8 ++++----
+ app/models/grade_bucket_mapping.rb                               |  5 +++++
+ app/models/parent_payment_master.rb                              |  4 ++--
+ app/models/student_master.rb                                     |  5 +++++
+ app/views/fee_grade_buckets/_form.html.haml                      | 13 ++++++-------
+ app/views/fee_types/index.html.haml                              |  7 ++++---
+ app/views/layouts/application.html.haml                          |  9 +++------
+ app/views/parent_payment_masters/edit.html.haml                  |  6 +++---
+ app/views/parent_payment_masters/new.html.haml                   |  8 ++++----
+ config/database.yml                                              | 13 +++++--------
+ db/migrate/20140616065945_add_bus_facility_to_student_masters.rb |  5 +++++
+ db/schema.rb                                                     | 19 ++-----------------
+ lib/grade_fee_grid.rb                                            | 30 ++++++++----------------------
+ lib/menu/{academics.rb => academic.rb}                           |  4 ++--
+ lib/menu/context_detector.rb                                     | 19 +++++++++++++++++++
+ lib/monthly_pdc_grid.rb                                          | 18 +++++++-----------
+ lib/term_fee_grid.rb                                             | 19 ++++++++-----------
+ 22 files changed, 135 insertions(+), 111 deletions(-)
+ create mode 100644 db/migrate/20140616065945_add_bus_facility_to_student_masters.rb
+ rename lib/menu/{academics.rb => academic.rb} (92%)
+ create mode 100644 lib/menu/context_detector.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140617060210_insert_grade_master_idin_section_masters.rb
+#
+nothing added to commit but untracked files present (use "git add" to track)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git co academic_timetable 
+Switched to branch 'academic_timetable'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git status
+# On branch academic_timetable
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140617060210_insert_grade_master_idin_section_masters.rb
+#
+nothing added to commit but untracked files present (use "git add" to track)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git rebase master
+First, rewinding head to replay your work on top of it...
+Fast-forwarded academic_timetable to master.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git stash pop
+Auto-merging db/schema.rb
+CONFLICT (content): Merge conflict in db/schema.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git reset head
+fatal: ambiguous argument 'head': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git reset HEAD
+Unstaged changes after reset:
+M	app/assets/javascripts/angular_modules/controllers/timetables.js
+M	app/assets/javascripts/angular_modules/services/gradeservice.js
+M	app/assets/stylesheets/email.css
+M	app/assets/stylesheets/time_tables.css.scss
+M	app/controllers/time_tables_controller.rb
+M	app/models/section_master.rb
+M	app/views/time_tables/_period_form.html.haml
+M	config/routes.rb
+M	db/schema.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git status
+# On branch academic_timetable
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/assets/javascripts/angular_modules/controllers/timetables.js
+#	modified:   app/assets/javascripts/angular_modules/services/gradeservice.js
+#	modified:   app/assets/stylesheets/email.css
+#	modified:   app/assets/stylesheets/time_tables.css.scss
+#	modified:   app/controllers/time_tables_controller.rb
+#	modified:   app/models/section_master.rb
+#	modified:   app/views/time_tables/_period_form.html.haml
+#	modified:   config/routes.rb
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140617060210_insert_grade_master_idin_section_masters.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ git status
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

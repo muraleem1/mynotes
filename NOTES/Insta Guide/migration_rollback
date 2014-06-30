@@ -1,0 +1,22 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ rails g migration AddPeriodIdColumnToTimeTables
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+      invoke  active_record
+      create    db/migrate/20140625111910_add_period_id_column_to_time_tables.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ rake db:migrate
+==  AddPeriodIdColumnToTimeTables: migrating ==================================
+-- change_table(:section_masters)
+   -> 0.0332s
+==  AddPeriodIdColumnToTimeTables: migrated (0.0333s) =========================
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ rake db:migrate rake db:rollback STEP=1
+rake aborted!
+Don't know how to build task 'rake'
+
+(See full trace by running task with --trace)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ 	
+==  AddPeriodIdColumnToTimeTables: reverting ==================================
+-- remove_column(:section_masters, :period_id, :integer, {})
+   -> 0.0325s
+==  AddPeriodIdColumnToTimeTables: reverted (0.0449s) =========================
+
