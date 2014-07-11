@@ -1,0 +1,30 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$  heroku pg:psql --app morning-reaches-8011 yellow 
+---> Connecting to HEROKU_POSTGRESQL_YELLOW_URL (DATABASE_URL)
+psql (9.3.4, server 9.3.3)
+SSL connection (cipher: DHE-RSA-AES256-SHA, bits: 256)
+Type "help" for help.
+
+morning-reaches-8011::YELLOW=> select * from section_masters;
+ id | section |         created_at         |         updated_at         | grade_master_id 
+----+---------+----------------------------+----------------------------+-----------------
+  6 | A       | 2014-06-30 08:16:40.272387 | 2014-06-30 08:16:40.272387 |                
+  7 | B       | 2014-06-30 08:16:40.285296 | 2014-06-30 08:16:40.285296 |                
+  8 | C       | 2014-06-30 08:16:40.290768 | 2014-06-30 08:16:40.290768 |                
+  9 | D       | 2014-06-30 08:16:40.295498 | 2014-06-30 08:16:40.295498 |                
+ 10 | E       | 2014-06-30 08:16:40.300284 | 2014-06-30 08:16:40.300284 |                
+(5 rows)
+
+morning-reaches-8011::YELLOW=> delete from section_masters ;
+DELETE 5
+morning-reaches-8011::YELLOW=> select * from section_masters;
+ id | section |         created_at         |         updated_at         | grade_master_id 
+----+---------+----------------------------+----------------------------+-----------------
+ 11 | A       | 2014-07-08 12:39:50.890601 | 2014-07-08 12:39:50.890601 |               1
+ 12 | B       | 2014-07-08 12:39:50.908975 | 2014-07-08 12:39:50.908975 |               1
+ 13 | C       | 2014-07-08 12:39:50.918374 | 2014-07-08 12:39:50.918374 |               2
+ 14 | D       | 2014-07-08 12:39:50.925785 | 2014-07-08 12:39:50.925785 |               2
+ 15 | E       | 2014-07-08 12:39:50.933412 | 2014-07-08 12:39:50.933412 |               3
+(5 rows)
+
+morning-reaches-8011::YELLOW=> 
+

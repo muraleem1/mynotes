@@ -1,0 +1,62 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (teacher_grade_map)$ rails g model ClassTeacherMappings grade_master_id:integer section_master_id:integer faculty_master_id:integer
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+      invoke  active_record
+      create    db/migrate/20140709093931_create_class_teacher_mappings.rb
+      create    app/models/class_teacher_mappings.rb
+      invoke    rspec
+      create      spec/models/class_teacher_mappings_spec.rb
+      invoke      factory_girl
+      create        spec/factories/class_teacher_mappings.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (teacher_grade_map)$ rake db:migrate
+==  CreateClassTeacherMappings: migrating =====================================
+-- create_table(:class_teacher_mappings)
+   -> 0.0283s
+==  CreateClassTeacherMappings: migrated (0.0285s) ============================
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (teacher_grade_map)$ rake db:rollback STEP=1
+==  CreateClassTeacherMappings: reverting =====================================
+-- drop_table(:class_teacher_mappings)
+   -> 0.0012s
+==  CreateClassTeacherMappings: reverted (0.0138s) ============================
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (teacher_grade_map)$ rails destroy model ClassTeacherMappings grade_master_id:integer section_master_id:integer faculty_master_id:integer
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+      invoke  active_record
+      remove    db/migrate/20140709093931_create_class_teacher_mappings.rb
+      remove    app/models/class_teacher_mappings.rb
+      invoke    rspec
+      remove      spec/models/class_teacher_mappings_spec.rb
+      invoke      factory_girl
+      remove        spec/factories/class_teacher_mappings.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (teacher_grade_map)$ rails g model ClassTeacherMapping grade_master_id:integer section_master_id:integer faculty_master_id:integer
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+      invoke  active_record
+      create    db/migrate/20140709095732_create_class_teacher_mappings.rb
+      create    app/models/class_teacher_mapping.rb
+      invoke    rspec
+      create      spec/models/class_teacher_mapping_spec.rb
+      invoke      factory_girl
+      create        spec/factories/class_teacher_mappings.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (teacher_grade_map)$ rake db:migrate
+==  CreateClassTeacherMappings: migrating =====================================
+-- create_table(:class_teacher_mappings)
+   -> 0.0385s
+==  CreateClassTeacherMappings: migrated (0.0387s) ============================
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (teacher_grade_map)$ 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

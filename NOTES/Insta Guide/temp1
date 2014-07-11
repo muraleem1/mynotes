@@ -1,0 +1,41 @@
+ id | grade_master_id | section_master_id | subject_master_id | created_at | updated_at | faculty_master_id 
+----+-----------------+-------------------+-------------------+------------+------------+-------------------
+  1 | 2               | 1                 | 1                 |            |            |                 1
+  2 | 2               | 2                 | 1                 |            |            |                 1
+  3 | 1               | 5                 | 1                 |            |            |                 1
+  4 | 3               | 4                 | 2                 |            |            |                 2
+  5 | 4               | 3                 | 2                 |            |            |                 2
+
+
+manthan_development=# select *from faculty_masters;
+ id | user_id | faculty_name | created_at | updated_at 
+----+---------+--------------+------------+------------
+  1 |      21 | SRIKANTH     |            | 
+  2 |      22 | MURALEE      |            | 
+  3 |      23 | SWAMY        |            | 
+  4 |      24 | PRIYA        |            | 
+  5 |      25 | NAVYA        |            | 
+  6 |      26 | UMA          |            | 
+(6 rows)
+
+
+manthan_development=# select *from section_masters;
+ id | section |         created_at         |         updated_at         | grade_master_id 
+----+---------+----------------------------+----------------------------+-----------------
+  1 | A       | 2014-06-20 12:34:01.320461 | 2014-06-20 12:34:01.320461 | 1
+  2 | B       | 2014-06-20 12:34:01.336997 | 2014-06-20 12:34:01.336997 | 1
+  3 | C       | 2014-06-20 12:34:01.349033 | 2014-06-20 12:34:01.349033 | 2
+  4 | D       | 2014-06-20 12:34:01.362422 | 2014-06-20 12:34:01.362422 | 2
+  5 | E       | 2014-06-20 12:34:01.374443 | 2014-06-20 12:34:01.374443 | 3
+
+PERIOD	MON	TUE	WED	THU	FRI	SAT
+Period 1	1- D	2- C				
+Period 2	1- D	1- D	1- D		1- D	
+Period 3	2- C			2- C		2- C
+Period 4		1- D	1- D		2- C	
+Period 5	1- D	2- C		2- C		2- C
+Period 6	1- D	2- C	2- C	2- C		
+Period 7	2- C		2- C		1- D	1- D
+Period 8					1- D	
+
+

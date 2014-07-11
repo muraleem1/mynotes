@@ -41,7 +41,7 @@ module ApplicationHelper
   end
  
 end
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++==
++++++++++++++++++++++++++++++++++++++in lib/menu++++++++++++++++++++++++++++++++++++++++++++++++++==
 class ContextDetector
   CONTEXT_CONTROLLER_MAPPER = {
     "fee_types" => "fee_management",
