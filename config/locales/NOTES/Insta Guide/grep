@@ -1,0 +1,91 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_assessment_teacher)$ ack-grep Role
+The program 'ack-grep' is currently not installed.  You can install it by typing:
+sudo apt-get install ack-grep
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_assessment_teacher)$ sudo apt-get install ack-grep
+[sudo] password for ostryalabs: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libkrb5-3:i386 libgconf-2-4:i386 libatk1.0-0:i386 libk5crypto3:i386 libstdc++6:i386 libxfixes3:i386 libxcomposite1:i386 libldap-2.4-2:i386
+  libroken18-heimdal:i386 libidn11:i386 gir1.2-ubuntuoneui-3.0 libnss3:i386 libjpeg-turbo8:i386 libjpeg8:i386 libcap2:i386
+  libdbus-glib-1-2:i386 libasn1-8-heimdal:i386 libcairo2:i386 libgnutls26:i386 libgssapi3-heimdal:i386 libtasn1-3:i386 libfreetype6:i386
+  libexpat1:i386 libdatrie1:i386 libavahi-common-data:i386 libgdk-pixbuf2.0-0:i386 libxcb1:i386 libp11-kit0:i386 libwind0-heimdal:i386
+  libxau6:i386 libpixman-1-0:i386 libcups2:i386 libcurl3:i386 libxinerama1:i386 libkrb5support0:i386 libxft2:i386 libxdmcp6:i386
+  libgcrypt11:i386 libthai0:i386 libkeyutils1:i386 libasound2:i386 libxrender1:i386 libhcrypto4-heimdal:i386 libnspr4:i386
+  libhx509-5-heimdal:i386 libxss1:i386 libheimbase1-heimdal:i386 libtiff4:i386 libjasper1:i386 libubuntuoneui-3.0-1 libxtst6:i386
+  libavahi-client3:i386 thunderbird-globalmenu libx11-6:i386 libsasl2-2:i386 libfontconfig1:i386 libpango1.0-0:i386 libheimntlm0-heimdal:i386
+  libxdamage1:i386 libkms1 libxcb-render0:i386 librtmp0:i386 libgssapi-krb5-2:i386 libxi6:i386 libxcursor1:i386 libxcb-shm0:i386
+  libxext6:i386 libsasl2-modules:i386 libavahi-common3:i386 libxrandr2:i386 libsqlite3-0:i386 libgtk2.0-0:i386 libkrb5-26-heimdal:i386
+  libgpg-error0:i386
+Use 'apt-get autoremove' to remove them.
+The following extra packages will be installed:
+  libfile-next-perl
+The following NEW packages will be installed:
+  ack-grep libfile-next-perl
+0 upgraded, 2 newly installed, 0 to remove and 42 not upgraded.
+Need to get 70.8 kB of archives.
+After this operation, 267 kB of additional disk space will be used.
+Do you want to continue [Y/n]? Y
+Get:1 http://in.archive.ubuntu.com/ubuntu/ precise/universe libfile-next-perl all 1.06-2 [16.0 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu/ precise/universe ack-grep all 1.92-1 [54.9 kB]
+Fetched 70.8 kB in 0s (126 kB/s)   
+Selecting previously unselected package libfile-next-perl.
+(Reading database ... 332459 files and directories currently installed.)
+Unpacking libfile-next-perl (from .../libfile-next-perl_1.06-2_all.deb) ...
+Selecting previously unselected package ack-grep.
+Unpacking ack-grep (from .../ack-grep_1.92-1_all.deb) ...
+Processing triggers for man-db ...
+Setting up libfile-next-perl (1.06-2) ...
+Setting up ack-grep (1.92-1) ...
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_assessment_teacher)$ ack-grep Role
+spec/models/role_spec.rb
+3:describe Role do
+
+app/models/uploaders/parent_uploader.rb
+26:    @role ||= Role.find_by_code("parent")
+
+app/models/role.rb
+1:class Role < ActiveRecord::Base
+
+app/controllers/approval_items_controller.rb
+22:          principal = User.find_by_role_id(Role.find_by_code('principal'))
+34:          principal = User.find_by_role_id(Role.find_by_code('principal'))
+52:          principal = User.find_by_role_id(Role.find_by_code('principal'))
+
+app/controllers/parents_controller.rb
+55:      @parent.user.role_id = Role.parent_role.id
+
+db/seeds.rb
+12:  @admin = Role.find_by_code("admin")
+13:  @parent = Role.find_by_code("parent")
+14:  @accountant = Role.find_by_code("accountant")
+15:  @principal = Role.find_by_code("principal")
+16:  @bod = Role.find_by_code("bod")
+17:  @teacher = Role.find_by_code("teacher")
+18:  @librarian = Role.find_by_code("librarian") 
+19:  @transport_head = Role.find_by_code("transport_head")
+21:    Role.create(:role => "admin", :code => "admin", :description => "admin")
+25:    Role.create(:role => "parent", :code => "parent", :description => "parent")
+29:    Role.create(:role => "accountant", :code => "accountant", :description => "accountant")
+33:    Role.create(:role => "principal", :code => "principal", :description => "principal")
+37:    Role.create(:role => "bod", :code => "bod", :description => "bod")
+40:    Role.create(:role => "teacher", :code => "teacher", :description => "teacher")
+43:    Role.create(:role => "librarian", :code => "librarian", :description => "librarian")
+47:    Role.create(:role => "transport_head",:code => "transport_head",:description => "transport_head")
+54:  admin_role = Role.find_by_code("admin")
+55:  parent_role = Role.find_by_code("parent")
+56:  accountant_role = Role.find_by_code("accountant")
+57:  principal = Role.find_by_code("principal")
+58:  bod = Role.find_by_code("bod")
+59:  teacher = Role.find_by_code("teacher")
+60:  librarian = Role.find_by_code("librarian")
+61:  transport_head = Role.find_by_code("transport_head")
+141:  Parent.first_or_create(:father_name => "Raghu", :mother_name => "Janaki", :father_email => "navya@ostryalabs.com", :mother_email => "navya@ostryalabs.com", :user_id => User.find_by_role_id(Role.find_by_code("parent")).id)
+142:  Parent.create(:father_name => "Ramu", :mother_name => "Jani", :father_email => "shanmugapriya@ostryalabs.com", :mother_email => "navya@ostryalabs.com", :user_id => User.find_by_role_id(Role.find_by_code("parent")).id)
+143:  Parent.create(:father_name => "Raju", :mother_name => "Janu", :father_email => "umarani@ostryalabs.com", :mother_email => "navya@ostryalabs.com", :user_id => User.find_by_role_id(Role.find_by_code("parent")).id)
+
+db/migrate/20140527115231_create_roles.rb
+1:class CreateRoles < ActiveRecord::Migration
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_assessment_teacher)$ 
+

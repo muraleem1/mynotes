@@ -9,12 +9,8 @@ ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable
    -> 0.0332s
 ==  AddPeriodIdColumnToTimeTables: migrated (0.0333s) =========================
 
-ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ rake db:migrate rake db:rollback STEP=1
-rake aborted!
-Don't know how to build task 'rake'
-
 (See full trace by running task with --trace)
-ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ 	
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academic_timetable)$ rake db:rollback STEP=1	
 ==  AddPeriodIdColumnToTimeTables: reverting ==================================
 -- remove_column(:section_masters, :period_id, :integer, {})
    -> 0.0325s

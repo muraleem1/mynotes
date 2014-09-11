@@ -1,0 +1,16 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (class_teacher_mapping)$ rails g migration AddIndexToClassTeacherMappingsTable/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: already initialized constant Mime::PDF
+/home/ostryalabs/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.2/lib/action_dispatch/http/mime_type.rb:166: warning: previous definition of PDF was here
+      invoke  active_record
+      create    db/migrate/20140715053153_add_index_to_class_teacher_mappings_table.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (class_teacher_mapping)$ rake db:migrate
+==  AddIndexToClassTeacherMappingsTable: migrating ============================
+-- add_index(:class_teacher_mappings, [:grade_master_id, :section_master_id, :faculty_master_id], {:unique=>true, :name=>"class_teacher_map_index"})
+   -> 0.2087s
+==  AddIndexToClassTeacherMappingsTable: migrated (0.2088s) ===================
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (class_teacher_mapping)$  rake db:rollback STEP=1
+==  AddIndexToClassTeacherMappingsTable: reverting ============================
+-- remove_index(:class_teacher_mappings, {:unique=>true, :name=>"class_teacher_map_index", :column=>[:grade_master_id, :section_master_id, :faculty_master_id]})
+   -> 0.0534s
+==  AddIndexToClassTeacherMappingsTable: reverted (0.0723s) ===================
+
