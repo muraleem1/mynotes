@@ -1,0 +1,2 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ psql -d f1admin_development -U ostryalabs -f '/home/ostryalabs/Downloads/f1dump3sep2014_pg.sql' 
+

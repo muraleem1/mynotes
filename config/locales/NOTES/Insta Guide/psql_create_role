@@ -1,0 +1,62 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ sudo -u postgres psql
+[sudo] password for ostryalabs: 
+psql (9.3.5)
+Type "help" for help.
+
+postgres=# \du
+                             List of roles
+ Role name |                   Attributes                   | Member of 
+-----------+------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication | {}
+
+postgres=# CREATE ROLE ostryalabs WITH SUPERUSER; 
+CREATE ROLE
+postgres=# \du
+                              List of roles
+ Role name  |                   Attributes                   | Member of 
+------------+------------------------------------------------+-----------
+ ostryalabs | Superuser, Cannot login                        | {}
+ postgres   | Superuser, Create role, Create DB, Replication | {}
+
+postgres=# \q
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ bundle exec rake db:drop
+Couldn't drop f1admin_development : #<PG::ConnectionBad: FATAL:  role "ostryalabs" is not permitted to log in
+>
+Couldn't drop f1admin_test : #<PG::ConnectionBad: FATAL:  role "ostryalabs" is not permitted to log in
+>
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ sudo -u postgres psql
+[sudo] password for ostryalabs: 
+psql (9.3.5)
+Type "help" for help.
+
+postgres=# CREATE ROLE ostryalabs WITH SUPERUSER LOGIN; 
+ERROR:  role "ostryalabs" already exists
+postgres=# ALTER ROLE ostryalabs WITH SUPERUSER LOGIN; 
+ALTER ROLE
+postgres=# \du
+                              List of roles
+ Role name  |                   Attributes                   | Member of 
+------------+------------------------------------------------+-----------
+ ostryalabs | Superuser                                      | {}
+ postgres   | Superuser, Create role, Create DB, Replication | {}
+
+postgres=# ALTER ROLE ostryalabs WITH SUPERUSER LOGIN; ^C
+postgres=# ^C
+postgres=# \q
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

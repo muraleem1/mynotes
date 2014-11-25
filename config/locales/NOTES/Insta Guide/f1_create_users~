@@ -1,0 +1,41 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+stryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ rails g controller CreateUsers
+ INFO development(/home/ostryalabs/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/activerecord-3.2.13/lib/active_record/railtie.rb:80:in `block (2 levels) in <class:Railtie>'): Connecting to database specified by database.yml
+DEBUG development(/home/ostryalabs/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/activesupport-3.2.13/lib/active_support/log_subscriber.rb:105:in `debug'):    (3.4ms)  SELECT cg.company_id, cg.mapped_to_company FROM company_groupings cg JOIN (SELECT cg.mapped_to_company, COUNT(cg.mapped_to_company) AS COUNT FROM users u JOIN company_groupings cg ON u.company_id = cg.company_id GROUP BY cg.mapped_to_company HAVING COUNT(cg.mapped_to_company) > 4) AS tmp ON tmp.mapped_to_company = cg.mapped_to_company
+DEBUG development(/home/ostryalabs/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/activesupport-3.2.13/lib/active_support/log_subscriber.rb:105:in `debug'):    (0.4ms)  SELECT COUNT(*) FROM "companies" 
+      create  app/controllers/create_users_controller.rb
+      invoke  erb
+      create    app/views/create_users
+      invoke  rspec
+      create    spec/controllers/create_users_controller_spec.rb
+      invoke  helper
+      create    app/helpers/create_users_helper.rb
+      invoke    rspec
+      create      spec/helpers/create_users_helper_spec.rb
+      invoke  assets
+      invoke    js
+      create      app/assets/javascripts/create_users.js
+      invoke    scss
+      create      app/assets/stylesheets/create_users.css.scss
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

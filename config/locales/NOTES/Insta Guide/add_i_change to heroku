@@ -1,0 +1,298 @@
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academics_changes)$ git status
+# On branch academics_changes
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/models/faculty_master.rb
+#	modified:   config/database.yml
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140915112138_add_book_id_to_block_books.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academics_changes)$ git remote -v
+heroku	git@heroku.com:morning-reaches-8011.git (fetch)
+heroku	git@heroku.com:morning-reaches-8011.git (push)
+origin	git@github.com:sri-sankl/manthan_erp.git (fetch)
+origin	git@github.com:sri-sankl/manthan_erp.git (push)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academics_changes)$ git log
+commit 46d3d834303761fcdc67fd1eaf7e67d5231894c5
+Author: chandrashekargupta <your.chandu.gupta16@gmail.com>
+Date:   Tue Sep 16 11:46:47 2014 +0530
+
+    routes controller
+
+commit 8f7cb71658bc46e0c7cea4a3e16709a6d947adde
+Author: chandrashekargupta <your.chandu.gupta16@gmail.com>
+Date:   Tue Sep 16 11:16:15 2014 +0530
+
+    alerts removed
+
+commit 72ac80f4feb490ea80c8fa030a14359be7cca677
+Author: Srikanth <sri.panniru08@gmail.com>
+Date:   Mon Sep 15 19:05:10 2014 +0530
+
+    syntax mistake by canteen at context_detector
+
+commit 50621c69c5c975c801ccd9960123d22b0a39046b
+Merge: 637dbb6 889959a
+Author: Srikanth <sri.panniru08@gmail.com>
+Date:   Mon Sep 15 18:56:41 2014 +0530
+
+    merge conflict with assesments
+
+commit 637dbb69a66450d3a17f16c2782dbe01d0b9fe28
+Merge: de68a96 ba17497
+Author: Srikanth <sri.panniru08@gmail.com>
+Date:   Mon Sep 15 18:55:14 2014 +0530
+
+    conflict with canteen new branch
+
+commit de68a96b89ce5120bdcc68112b4062846f2a95dd
+Merge: f908e22 4f39e2c
+Author: Srikanth <sri.panniru08@gmail.com>
+Date:   Mon Sep 15 18:48:30 2014 +0530
+
+    Merge remote-tracking branch 'origin/library'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academics_changes)$ git co master
+M	app/models/faculty_master.rb
+M	config/database.yml
+M	db/schema.rb
+Switched to branch 'master'
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git fetch
+remote: Counting objects: 11, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 11 (delta 4), reused 0 (delta 0)
+Unpacking objects: 100% (11/11), done.
+From github.com:sri-sankl/manthan_erp
+   46d3d83..b4e2146  master     -> origin/master
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git stash 
+Saved working directory and index state WIP on master: 46d3d83 routes controller
+HEAD is now at 46d3d83 routes controller
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git merge origin/master 
+Updating 46d3d83..b4e2146
+Fast-forward
+ app/assets/javascripts/angular_modules/controllers/attendance.js | 29 ++++++++++++++++++++++-------
+ app/assets/javascripts/attendances.js                            | 10 ++--------
+ app/views/attendances/_edit_form.html.haml                       | 27 +++++++++++++++++++++++++++
+ app/views/attendances/_form.html.haml                            | 69 +++++++++++++++++++++++++++++----------------------------------------
+ app/views/attendances/_show_form.html.haml                       | 13 +++++++++++++
+ app/views/attendances/_test.html.haml                            |  6 ++++++
+ app/views/attendances/index.html.haml                            | 14 ++++++++++----
+ app/views/student_masters/_students.html.haml                    | 12 +++++++++---
+ db/seeds.rb                                                      | 16 +++++++++++++++-
+ lib/menu/attendance_ctrl.rb                                      |  2 +-
+ 10 files changed, 134 insertions(+), 64 deletions(-)
+ create mode 100644 app/views/attendances/_edit_form.html.haml
+ create mode 100644 app/views/attendances/_show_form.html.haml
+ create mode 100644 app/views/attendances/_test.html.haml
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git stash pop
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/models/faculty_master.rb
+#	modified:   config/database.yml
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140915112138_add_book_id_to_block_books.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (ec9d6a1ed63b6f386b51cc67677af8b72ff5f282)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git add app/models/faculty_master.rb
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   app/models/faculty_master.rb
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   config/database.yml
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140915112138_add_book_id_to_block_books.rb
+#
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git commit -m "name changed to faculty_name in faculty master"
+[master 278e0d0] name changed to faculty_name in faculty master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git push origin master 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 448 bytes | 0 bytes/s, done.
+Total 5 (delta 4), reused 0 (delta 0)
+To git@github.com:sri-sankl/manthan_erp.git
+   b4e2146..278e0d0  master -> master
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ git push heroku master 
+Fetching repository, done.
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 448 bytes | 0 bytes/s, done.
+Total 5 (delta 4), reused 0 (delta 0)
+
+-----> Ruby app detected
+-----> Compiling Ruby/Rails
+-----> Using Ruby version: ruby-2.0.0
+-----> Installing dependencies using 1.6.3
+       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+       Using rake 10.3.2
+       Using minitest 5.4.0
+       Using thread_safe 0.3.4
+       Using builder 3.2.2
+       Using erubis 2.7.0
+       Using rack 1.5.2
+       Using mime-types 1.25.1
+       Using polyglot 0.3.5
+       Using arel 5.0.1.20140414130214
+       Using addressable 2.3.6
+       Using thor 0.19.1
+       Using hike 1.2.3
+       Using multi_json 1.10.1
+       Using tilt 1.4.1
+       Using i18n 0.6.11
+       Using json 1.8.1
+       Using angularjs-rails 1.2.18
+       Using angular-ui-bootstrap-rails 0.11.0
+       Using ice_nine 0.11.0
+       Using sass 3.2.19
+       Using will_paginate 3.0.7
+       Using cancan 1.6.10
+       Using unicode_utils 1.4.0
+       Using bundler 1.6.3
+       Using bcrypt 3.1.7
+       Using chartkick 1.3.2
+       Using chunky_png 1.3.1
+       Using execjs 2.2.1
+       Using coffee-script-source 1.7.1
+       Using fssm 0.2.10
+       Using orm_adapter 0.5.0
+       Using request_store 1.0.8
+       Using equalizer 0.0.9
+       Using fullcalendar-rails 1.6.1.0
+       Using geocoder 1.2.4
+       Using gmaps4rails 2.1.2
+       Using language_list 1.0.0
+       Using mini_portile 0.6.0
+       Using oj 2.10.2
+       Using oj_mimic_json 1.0.1
+       Using pg 0.17.1
+       Using rubyzip 1.1.6
+       Using ruby-ole 1.2.11.7
+       Using wkhtmltopdf-binary 0.9.9.3
+       Using tzinfo 1.2.2
+       Using descendants_tracker 0.0.4
+       Using rack-test 0.6.2
+       Using warden 1.2.3
+       Using css_parser 1.3.5
+       Using treetop 1.4.15
+       Using sprockets 2.11.0
+       Using haml 4.0.5
+       Using bootstrap-will_paginate 0.0.10
+       Using carmen 1.0.1
+       Using bootstrap-sass 3.0.3.0
+       Using uglifier 2.5.3
+       Using coffee-script 2.3.0
+       Using compass 0.12.7
+       Using nokogiri 1.6.3.1
+       Using spreadsheet 0.9.8
+       Using activesupport 4.1.5
+       Using axiom-types 0.1.1
+       Using coercible 1.0.0
+       Using mail 2.5.4
+       Using compass-rails 2.0.0
+       Using roo 1.13.2
+       Using actionview 4.1.5
+       Using activemodel 4.1.5
+       Using delayed_job 4.0.2
+       Using factory_girl 4.4.0
+       Using jbuilder 1.5.3
+       Using numbers_and_words 0.10.0
+       Using virtus 1.0.3
+       Using actionpack 4.1.5
+       Using activerecord 4.1.5
+       Using carrierwave 0.10.0
+       Using railties 4.1.5
+       Using actionmailer 4.1.5
+       Using draper 1.3.1
+       Using gon 5.1.2
+       Using sprockets-rails 2.0.1
+       Using composite_primary_keys 7.0.10
+       Using delayed_job_active_record 4.0.2
+       Using paranoia 2.0.2
+       Using pg_search 0.7.6
+       Using roadie 2.4.3
+       Using angular-rails-templates 0.1.3
+       Using coffee-rails 4.0.1
+       Using devise 3.3.0
+       Using font-awesome-rails 4.1.0.0
+       Using factory_girl_rails 4.4.1
+       Using jquery-cookie-rails 1.3.1.1
+       Using haml-rails 0.5.3
+       Using jquery-rails 3.1.1
+       Using jquery-timepicker-rails 1.4.3
+       Using jquery-ui-rails 4.1.0
+       Using sass-rails 4.0.2
+       Using rails 4.1.5
+       Using turbolinks 2.3.0
+       Using carmen-rails 1.0.1
+       Using jquery-turbolinks 0.2.1
+       Using rails3-jquery-autocomplete 1.0.14
+       Using wicked_pdf 0.11.0
+       Using nested_form 0.3.2 from https://github.com/ryanb/nested_form.git (at master)
+       Your bundle is complete!
+       Gems in the groups development and test were not installed.
+       It was installed into ./vendor/bundle
+       Bundle completed (0.85s)
+       Cleaning up the bundler cache.
+-----> Preparing app for Rails asset pipeline
+       Running: rake assets:precompile
+       /tmp/build_dea07425-10bf-4408-99a0-a1e3366e2c84/vendor/bundle/ruby/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+       /tmp/build_dea07425-10bf-4408-99a0-a1e3366e2c84/vendor/bundle/ruby/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+       Asset precompilation completed (6.55s)
+       Cleaning assets
+       Running: rake assets:clean
+       /tmp/build_dea07425-10bf-4408-99a0-a1e3366e2c84/vendor/bundle/ruby/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/http/mime_type.rb:163: warning: already initialized constant Mime::PDF
+       /tmp/build_dea07425-10bf-4408-99a0-a1e3366e2c84/vendor/bundle/ruby/2.0.0/gems/actionpack-4.1.5/lib/action_dispatch/http/mime_type.rb:163: warning: previous definition of PDF was here
+
+###### WARNING:
+       Include 'rails_12factor' gem to enable all platform features
+       See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
+
+###### WARNING:
+       You have not declared a Ruby version in your Gemfile.
+       To set your Ruby version add this line to your Gemfile:
+       ruby '2.0.0'
+       # See https://devcenter.heroku.com/articles/ruby-versions for more information.
+
+###### WARNING:
+       No Procfile detected, using the default web server (webrick)
+       https://devcenter.heroku.com/articles/ruby-default-web-server
+
+-----> Discovering process types
+       Procfile declares types -> (none)
+       Default types for Ruby  -> console, rake, web, worker
+
+-----> Compressing... done, 80.1MB
+-----> Launching... done, v64
+       http://morning-reaches-8011.herokuapp.com/ deployed to Heroku
+
+To git@heroku.com:morning-reaches-8011.git
+   b4e2146..278e0d0  master -> master
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (master)$ 
+

@@ -1,0 +1,91 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (library)$ git status
+# On branch library
+# Your branch is ahead of 'origin/library' by 22 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   config/database.yml
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140915112138_add_book_id_to_block_books.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (library)$ git stash pop
+error: Your local changes to the following files would be overwritten by merge:
+	config/database.yml
+	db/schema.rb
+Please, commit your changes or stash them before you can merge.
+Aborting
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (library)$ git stash
+Saved working directory and index state WIP on library: 46d3d83 routes controller
+HEAD is now at 46d3d83 routes controller
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (library)$ git stash apply stash@{1}
+# On branch library
+# Your branch is ahead of 'origin/library' by 22 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   app/assets/javascripts/angular_modules/controllers/block_book.js
+#	modified:   app/assets/javascripts/angular_modules/controllers/damagebook.js
+#	modified:   app/assets/javascripts/angular_modules/services/block_book_service.js
+#	modified:   app/assets/javascripts/angular_modules/services/damagebookservice.js
+#	modified:   app/assets/javascripts/angular_modules/services/resource.js
+#	modified:   app/controllers/block_books_controller.rb
+#	modified:   app/controllers/damagebooks_controller.rb
+#	modified:   app/models/book.rb
+#	modified:   app/models/damagebook.rb
+#	modified:   app/views/block_books/index.html.haml
+#	modified:   app/views/damagebooks/index.html.haml
+#	modified:   config/database.yml
+#	modified:   config/routes.rb
+#	modified:   db/schema.rb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	db/migrate/20140915112138_add_book_id_to_block_books.rb
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (library)$ git stash list
+stash@{0}: WIP on library: 46d3d83 routes controller
+stash@{1}: WIP on library: 46d3d83 routes controller
+stash@{2}: WIP on library: 4f39e2c add book_id to damage books
+stash@{3}: WIP on term_results: 604049a Class teacher view of term results
+stash@{4}: WIP on academic_assessment_results: 1e9a237 Faculty_Master
+stash@{5}: WIP on academic_assessment_results: d3f7665 Admin view of show_assessments
+stash@{6}: WIP on academic_assessment_teacher: 62cb7a8 Assessment teacher view
+stash@{7}: WIP on academic_assessment_teacher: 24a131e Admin View Of Assessment-Grade-Mapping
+stash@{8}: WIP on assessment_criteria: 31031c2 Grading development
+stash@{9}: WIP on class_teacher_mapping: f1b522b Academic timetable added for parent view
+stash@{10}: WIP on class_teacher_mapping: 209e206 Class Teacher Mapping Controller Created
+stash@{11}: WIP on teacher_grade_map: 459adb9 change dtattypes for grade,section,subject in teacher grade mappings
+stash@{12}: WIP on master: ba9e739 seed.rb error fix
+stash@{13}: WIP on teacher_grade_map: 2c2efc2 Merge remote-tracking branch 'origin/master'
+stash@{14}: WIP on teacher_grade_map: 16ca022 Added Delete Option For Teacher Grade Mapping
+stash@{15}: WIP on teacher_grade_map: 0d88e4f multi section select in teacher grade mapping
+stash@{16}: WIP on teachers_timetable: 6d38429 teachers time table functionality devloped
+stash@{17}: WIP on master: 156bf3c seeded user id to parent
+stash@{18}: WIP on master: bd1ebdf fee structure approval renamed to approval item
+stash@{19}: WIP on master: 1d2ca10 Changed all Indexes into Grid
+stash@{20}: WIP on academic_timetable: a6caf10 faculty_masters table created
+stash@{21}: WIP on academic_timetable: f2c2d41 period_id column added to Timetables
+stash@{22}: WIP on academic_timetable: 508b864 Default Table creation
+stash@{23}: WIP on academic_timetable: 5bb98e7 deploying in heroku(priya)
+stash@{24}: WIP on academic_timetable: 0888093 conflicts resolved with priyabranch
+stash@{25}: WIP on manthan_muralee: fe14755 deleted rename rename_payment_detail_id
+stash@{26}: WIP on manthan_muralee: 9813b54 subject and section masters created
+stash@{27}: WIP on master: 853ab61 clear pdcs
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

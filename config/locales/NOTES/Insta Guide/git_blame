@@ -1,0 +1,145 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/manthan_erp (academics_changes)$ git blame lib/menu/user_menu.rb
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  1) class UserMenu
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  2)   
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  3)   def initialize(user, context = nil, controller_name = nil)
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  4)     @user = user
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  5)     @context = context
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  6)     @controller_name = controller_name
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  7)   end
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  8) 
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  9)   def main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 10)     if @user.admin? or @user.accountant?
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 11)       return admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 12)     elsif @user.parent?
+096e53a2 (chandrashekargupta 2014-07-23 19:25:46 +0530 13)       return parent_main_menu
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 14)     else
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 15)       return admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 16)     end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 17)   end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 18)   
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 19)   def sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 20)     if @context.present?
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 21)       if @user.admin?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 22)         return @context.admin_sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 23)       elsif @user.parent?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 24)         return @context.parent_sub_menu
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  1) class UserMenu
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  2)   
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  3)   def initialize(user, context = nil, controller_name = nil)
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  4)     @user = user
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  5)     @context = context
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  6)     @controller_name = controller_name
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  7)   end
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  8) 
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  9)   def main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 10)     if @user.admin? or @user.accountant?
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 11)       return admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 12)     elsif @user.parent?
+096e53a2 (chandrashekargupta 2014-07-23 19:25:46 +0530 13)       return parent_main_menu
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 14)     else
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 15)       return admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 16)     end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 17)   end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 18)   
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 19)   def sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 20)     if @context.present?
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 21)       if @user.admin?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 22)         return @context.admin_sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 23)       elsif @user.parent?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 24)         return @context.parent_sub_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 12)     elsif @user.parent?
+096e53a2 (chandrashekargupta 2014-07-23 19:25:46 +0530 13)       return parent_main_menu
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 14)     else
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 15)       return admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 16)     end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 17)   end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 18)   
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 19)   def sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 20)     if @context.present?
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 21)       if @user.admin?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 22)         return @context.admin_sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 23)       elsif @user.parent?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 24)         return @context.parent_sub_menu
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  1) class UserMenu
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  2)   
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  3)   def initialize(user, context = nil, controller_name = nil)
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  4)     @user = user
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  5)     @context = context
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  6)     @controller_name = controller_name
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  7)   end
+13622aee (Srikanth           2014-06-05 13:11:07 +0530  8) 
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530  9)   def main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 10)     if @user.admin? or @user.accountant?
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 11)       return admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 12)     elsif @user.parent?
+096e53a2 (chandrashekargupta 2014-07-23 19:25:46 +0530 13)       return parent_main_menu
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 14)     else
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 15)       return admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 16)     end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 17)   end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 18)   
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 19)   def sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 20)     if @context.present?
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 21)       if @user.admin?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 22)         return @context.admin_sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 23)       elsif @user.parent?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 24)         return @context.parent_sub_menu
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 24)         return @context.parent_sub_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 16)     end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 17)   end
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 18)   
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 19)   def sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 20)     if @context.present?
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 21)       if @user.admin?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 22)         return @context.admin_sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 23)       elsif @user.parent?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 24)         return @context.parent_sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 25)       elsif @user.accountant?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 26)         return @context.accountant_sub_menu
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 27)       elsif @user.teacher?
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 28)         return @context.teacher_sub_menu 
+f98ec3d6 (umagaini           2014-07-08 18:39:33 +0530 29)       elsif @user.librarian?
+1636057d (Srikanth           2014-07-17 14:25:08 +0530 30)         return @context.librarian_sub_menu      
+57adf7e2 (Priya14            2014-07-11 20:00:04 +0530 31)       elsif @user.principal?
+57adf7e2 (Priya14            2014-07-11 20:00:04 +0530 32)         return @context.principal_sub_menu 
+c9659f85 (Priya14            2014-08-05 11:10:54 +0530 33)       elsif @user.transport_head?
+c9659f85 (Priya14            2014-08-05 11:10:54 +0530 34)       return @context.transport_head_sub_menu
+4d73968e (Swamy              2014-08-14 17:34:03 +0530 35)       elsif @user.canteenmanager?
+4d73968e (Swamy              2014-08-14 17:34:03 +0530 36)         return @context.canteenmanager_sub_menu
+e16052ff (Srikanth           2014-06-26 18:04:59 +0530 37)       end
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 38)     end
+9465d19b (Swamy              2014-07-01 18:30:56 +0530 39)     []
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 40)   end
+f377baf9 (Srikanth           2014-08-14 18:23:19 +0530 41)   
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 42)   private
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 43)   
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 44)   def admin_main_menu
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 45)     main_menu = []
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 46)     main_menu << MenuItem.new(:label => "Fee Management", :klass => ContextDetector.
+6e35e69a (Priya14            2014-08-27 19:21:02 +0530 47)     main_menu << MenuItem.new(:label => "Attendance", :klass => ContextDetector.mapp
+16e7e627 (Priya14            2014-06-30 19:50:43 +0530 48)     main_menu << MenuItem.new(:label => "Admissions", :klass => ContextDetector.mapp
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 49)     main_menu << MenuItem.new(:label => "Academics", :klass => ContextDetector.mappe
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 50)     main_menu << MenuItem.new(:label => "Results", :klass => ContextDetector.mapped_
+41925711 (Srikanth           2014-07-28 22:31:18 +0530 51)     main_menu << MenuItem.new(:label => "HRM", :klass => ContextDetector.mapped_modu
+455af30b (Priya14            2014-08-12 20:08:22 +0530 52)     main_menu << MenuItem.new(:label => "Recruitment", :klass => ContextDetector.map
+eb9c7853 (Srikanth           2014-06-27 22:34:17 +0530 53)     main_menu << MenuItem.new(:label => "Defaults", :klass => ContextDetector.mapped
+5db98e7e (chandrashekargupta 2014-07-10 19:26:17 +0530 54)     main_menu << MenuItem.new(:label => "Transport", :klass => ContextDetector.mappe
+9a0ea2de (Muralee Mohan      2014-09-11 15:08:14 +0530 55)     main_menu << MenuItem.new(:label => "Library", :klass => ContextDetector.mapped_
+fa19d3c6 (Swamy              2014-08-28 11:26:38 +0530 56) 
+fa19d3c6 (Swamy              2014-08-28 11:26:38 +0530 57)     main_menu << MenuItem.new(:label => "Canteen Facility", :klass => ContextDetecto
+f98ec3d6 (umagaini           2014-07-08 18:39:33 +0530 58)     main_menu
+5374d551 (Priya14            2014-06-16 15:50:45 +0530 59)   end
+13622aee (Srikanth           2014-06-05 13:11:07 +0530 60) end
+2763c8f8 (chandrashekargupta 2014-10-10 18:25:12 +0530 61)   
+2763c8f8 (chandrashekargupta 2014-10-10 18:25:12 +0530 62)   
+(END)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
