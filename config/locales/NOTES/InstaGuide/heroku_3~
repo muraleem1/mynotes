@@ -1,0 +1,25 @@
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ heroku keys
+=== muralee@ostryalabs.com Keys
+ssh-rsa AAAAB3NzaC...jWVAyZikqf muralee@ostryalabs.com
+
+
+
+
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$  heroku keys:remove adam@workstation.local
+Removing adam@workstation.local SSH key... failed
+ !    Key not found
+
+
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ git remote -v
+heroku	https://git.heroku.com/powerful-escarpment-3347.git (fetch)
+heroku	https://git.heroku.com/powerful-escarpment-3347.git (push)
+origin	git@github.com:muraleeol/rbvrr.git (fetch)
+origin	git@github.com:muraleeol/rbvrr.git (push)
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ git remote rm heroku
+
+
+
+ee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ git remote rm heroku
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ git remote add heroku git@heroku.com:salty-castle-7786.git
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ git remote -v
+

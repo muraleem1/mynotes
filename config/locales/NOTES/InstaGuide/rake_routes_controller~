@@ -1,0 +1,31 @@
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/f1circle (muralee_branch)$ bundle exec rake routes CONTROLLER=posts
+ INFO development(/home/lee/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/activerecord-3.2.13/lib/active_record/railtie.rb:80:in `block (2 levels) in <class:Railtie>'): Connecting to database specified by database.yml
+DEBUG development(/home/lee/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/activesupport-3.2.13/lib/active_support/log_subscriber.rb:105:in `debug'):    (7.0ms)  SELECT cg.company_id, cg.mapped_to_company FROM company_groupings cg JOIN (SELECT cg.mapped_to_company, COUNT(cg.mapped_to_company) AS COUNT FROM users u JOIN company_groupings cg ON u.company_id = cg.company_id GROUP BY cg.mapped_to_company HAVING COUNT(cg.mapped_to_company) > 4) AS tmp ON tmp.mapped_to_company = cg.mapped_to_company
+DEBUG development(/home/lee/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/activesupport-3.2.13/lib/active_support/log_subscriber.rb:105:in `debug'):    (0.9ms)  SELECT COUNT(*) FROM "companies" 
+                       POST   /posts/:id/comments/:comment_id/thank_comment(.:format)                posts#thank_comment
+                       GET    /posts/:id/comments/:comment_id/thankGivenUserListForComment(.:format) posts#thankGivenUserListForComment
+                       PUT    /posts/:id/comments/:comment_id/unthank_comment(.:format)              posts#unthank_comment
+       markAsSold_post PUT    /posts/:id/markAsSold(.:format)                                        posts#markAsSold
+       addComment_post POST   /posts/:id/addComment(.:format)                                        posts#addComment
+    removeComment_post DELETE /posts/:id/removeComment(.:format)                                     posts#removeComment
+           follow_post POST   /posts/:id/follow(.:format)                                            posts#follow
+         unfollow_post DELETE /posts/:id/unfollow(.:format)                                          posts#unfollow
+      description_post GET    /posts/:id/description(.:format)                                       posts#description
+         comments_post GET    /posts/:id/comments(.:format)                                          posts#comments
+       thank_post_post POST   /posts/:id/thank_post(.:format)                                        posts#thank_post
+thank_geven_users_post GET    /posts/:id/thank_geven_users(.:format)                                 posts#thank_geven_users
+     unthank_post_post PUT    /posts/:id/unthank_post(.:format)                                      posts#unthank_post
+         myposts_posts GET    /posts/myposts(.:format)                                               posts#myposts
+      unanswered_posts GET    /posts/unanswered(.:format)                                            posts#unanswered
+      seed_posts_posts GET    /posts/seed_posts(.:format)                                            posts#seed_posts
+   seed_comments_posts GET    /posts/seed_comments(.:format)                                         posts#seed_comments
+    seed_comment_posts POST   /posts/seed_comment(.:format)                                          posts#seed_comment
+                 posts GET    /posts(.:format)                                                       posts#index
+                       POST   /posts(.:format)                                                       posts#create
+              new_post GET    /posts/new(.:format)                                                   posts#new
+             edit_post GET    /posts/:id/edit(.:format)                                              posts#edit
+                  post GET    /posts/:id(.:format)                                                   posts#show
+                       PUT    /posts/:id(.:format)                                                   posts#update
+                       DELETE /posts/:id(.:format)                                                   posts#destroy
+               newpost GET    /newpost(.:format)                                                     posts#new
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -1,0 +1,66 @@
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/f1circle (master)$ git show HEAD@{0} --name-only
+commit 0b45332a6f02b55e954a77365fa7dde227ea724a
+Author: MURALEE <muraleem3@gmail.com>
+Date:   Sun Dec 14 23:14:44 2014 +0530
+
+    Added Admin page
+
+Gemfile
+Gemfile.lock
+app/assets/javascripts/admins.js
+app/assets/javascripts/application.js
+app/assets/javascripts/f1.js
+app/assets/javascripts/f1/angular/controller/newpost.js
+app/assets/javascripts/f1/angular/controller/seed_comment.js
+app/assets/javascripts/f1/angular/controller/seed_post_tags.js
+app/assets/javascripts/f1/angular/controller/seed_user.js
+app/assets/javascripts/f1/angular/service/post.js
+app/assets/javascripts/f1/angular/service/seed_comment_service.js
+app/assets/javascripts/f1/angular/service/seed_post_tags_service.js
+app/assets/javascripts/f1/angular/service/seed_user_service.js
+app/assets/javascripts/f1/f1.common.js
+app/assets/javascripts/users.js
+app/assets/stylesheets/admins.css.scss
+app/assets/stylesheets/posts.css.scss
+app/assets/stylesheets/users.css.scss
+app/controllers/admins_controller.rb
+app/controllers/home_controller.rb
+app/controllers/posts_controller.rb
+app/controllers/user_controller.rb
+app/controllers/users_controller.rb
+app/helpers/admins_helper.rb
+app/helpers/users_helper.rb
+app/models/user.rb
+app/views/admins/_admin_login_form.html.erb
+app/views/admins/_seed_post_form.html.erb
+app/views/admins/index.html.erb
+app/views/admins/new_admin_login.html.erb
+app/views/admins/seed_comments.html.erb
+app/views/admins/seed_post_tag.html.erb
+app/views/admins/seed_posts.html.erb
+app/views/admins/seed_users.html.erb
+app/views/shared/_navbar.html.erb
+app/views/users/new_user.html.erb
+app/views/users/seed_comments.html.erb
+app/views/users/seed_posts.html.erb
+app/views/users/seed_users_index.html.erb
+config/routes.rb
+db/migrate/20141130174851_remove_email_not_null_constraint_from_users.rb
+db/migrate/20141130180324_remove_access_token_not_null_constraint_from_users.rb
+db/migrate/20141130181557_remove_linked_in_id_not_null_constraint_from_users.rb
+db/migrate/20141202100323_add_seeded_user_column_to_users.rb
+db/migrate/20141205040521_add_time_of_post_to_posts.rb
+latest.dump
+spec/controllers/admins_controller_spec.rb
+spec/controllers/users_controller_spec.rb
+spec/helpers/admins_helper_spec.rb
+spec/helpers/users_helper_spec.rb
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/f1circle (master)$ git show HEAD@{1} --name-only
+commit 6d66229f10a81d0cf6370da8a09ca61400adfda4
+Author: Srikanth <sri.panniru08@gmail.com>
+Date:   Tue Sep 23 16:04:20 2014 +0530
+
+    ProcFile added
+
+Procfile
+

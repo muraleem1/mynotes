@@ -1,0 +1,59 @@
+ee@lee-Inspiron-N5110:~/Muralee/rails_projects/f1circle (master)$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   app/controllers/user_controller.rb
+	modified:   config/initializers/omniauth.rb
+	modified:   config/initializers/smtp_settings.rb
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   app/controllers/home_controller.rb
+	modified:   config/initializers/redis.rb
+	modified:   config/initializers/sidekiq.rb
+
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/f1circle (master)$ git add -i
+           staged     unstaged path
+  1:    unchanged        +5/-0 app/controllers/home_controller.rb
+  2:        +1/-1      nothing app/controllers/user_controller.rb
+  3:        +1/-1      nothing config/initializers/omniauth.rb
+  4:    unchanged        +2/-2 config/initializers/redis.rb
+  5:    unchanged        +1/-1 config/initializers/sidekiq.rb
+  6:       +22/-9      nothing config/initializers/smtp_settings.rb
+
+*** Commands ***
+  1: status	  2: update	  3: revert	  4: add untracked
+  5: patch	  6: diff	  7: quit	  8: help
+What now> 
+Bye.
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/f1circle (master)$ git reset config/initializers/smtp_settings.rb
+Unstaged changes after reset:
+M	app/controllers/home_controller.rb
+M	config/initializers/redis.rb
+M	config/initializers/sidekiq.rb
+M	config/initializers/smtp_settings.rb
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/f1circle (master)$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   app/controllers/user_controller.rb
+	modified:   config/initializers/omniauth.rb
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   app/controllers/home_controller.rb
+	modified:   config/initializers/redis.rb
+	modified:   config/initializers/sidekiq.rb
+	modified:   config/initializers/smtp_settings.rb
+
+

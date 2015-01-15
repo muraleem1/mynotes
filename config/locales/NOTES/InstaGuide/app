@@ -1,3 +1,5 @@
+ee@lee-Inspiron-N5110:~/Muralee/rails_projects$ rails new rbvrr --database=postgresql
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 $ echo "Hello,World"
 $ clear
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++

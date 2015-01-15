@@ -1,0 +1,14 @@
+lee@lee-Inspiron-N5110:~/.emacs.d (master)$ ls
+auto-save-list   haml-mode.el  projectile-bookmarks.eld  themes
+CONTRIBUTING.md  init.el       README.md                 utils
+core             modules       sample                    var
+elpa             personal      savefile                  vendor
+lee@lee-Inspiron-N5110:~/.emacs.d (master)$ emacs haml-mode.el
+lee@lee-Inspiron-N5110:~/.emacs.d (master)$ find haml-mode.el  -delete
+lee@lee-Inspiron-N5110:~/.emacs.d (master)$ ls
+auto-save-list   elpa     personal                  sample    utils
+CONTRIBUTING.md  init.el  projectile-bookmarks.eld  savefile  var
+core             modules  README.md                 themes    vendor
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+lee@lee-Inspiron-N5110:~/.emacs.d (master)$ touch haml-mode.el
+

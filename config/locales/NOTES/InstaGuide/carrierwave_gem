@@ -1,0 +1,93 @@
+#For Uploading pics,files
+gem 'carrierwave', '~> 0.10.0'
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ rails generate uploader Avatar
+      create  app/uploaders/avatar_uploader.rb
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ rails g model CustomBanner banner_caption:text
+      invoke  active_record
+      create    db/migrate/20150113100323_create_custom_banners.rb
+      create    app/models/custom_banner.rb
+      invoke    test_unit
+      create      test/models/custom_banner_test.rb
+      create      test/fixtures/custom_banners.yml
+
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ rake db:migrate
+== 20150113100323 CreateCustomBanners: migrating ==============================
+-- create_table(:custom_banners)
+   -> 0.0902s
+== 20150113100323 CreateCustomBanners: migrated (0.0904s) =====================
+
+rbvrr_development=# \d custom_banners;
+                                       Table "public.custom_banners"
+     Column     |            Type             |                          Modifiers                          
+----------------+-----------------------------+-------------------------------------------------------------
+ id             | integer                     | not null default nextval('custom_banners_id_seq'::regclass)
+ banner_caption | text                        | 
+ created_at     | timestamp without time zone | 
+ updated_at     | timestamp without time zone | 
+Indexes:
+    "custom_banners_pkey" PRIMARY KEY, btree (id)
+
+rbvrr_development=# select *from custom_banners;
+ id | banner_caption | created_at | updated_at 
+----+----------------+------------+------------
+(0 rows)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ rails g migration add_avatar_to_custom_banners avatar:string
+      invoke  active_record
+      create    db/migrate/20150113100633_add_avatar_to_custom_banners.rb
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ rake db:migrate
+== 20150113100633 AddAvatarToCustomBanners: migrating =========================
+-- add_column(:custom_banners, :avatar, :string)
+   -> 0.0017s
+== 20150113100633 AddAvatarToCustomBanners: migrated (0.0019s) ================
+
+bvrr_development=# \d custom_banners;
+                                       Table "public.custom_banners"
+     Column     |            Type             |                          Modifiers                          
+----------------+-----------------------------+-------------------------------------------------------------
+ id             | integer                     | not null default nextval('custom_banners_id_seq'::regclass)
+ banner_caption | text                        | 
+ created_at     | timestamp without time zone | 
+ updated_at     | timestamp without time zone | 
+ avatar         | character varying(255)      | 
+Indexes:
+    "custom_banners_pkey" PRIMARY KEY, btree (id)
+
+rbvrr_development=# select *from custom_banners;
+ id | banner_caption | created_at | updated_at | avatar 
+----+----------------+------------+------------+--------
+(0 rows)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+class CustomBanner < ActiveRecord::Base
+	 mount_uploader :avatar, AvatarUploader
+end
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

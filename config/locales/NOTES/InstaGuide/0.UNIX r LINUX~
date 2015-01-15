@@ -1,0 +1,35 @@
+ostryalabs@ostryalabs-5:~$ uname -a
+Linux ostryalabs-5 3.8.0-37-generic #53~precise1-Ubuntu SMP Wed Feb 19 21:37:54 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/demo_app (master)$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.4 LTS
+Release:	12.04
+Codename:	precise
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~$ df -h
+df: `/root/.gvfs': Permission denied
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       451G  5.8G  422G   2% /
+udev            3.9G  4.0K  3.9G   1% /dev
+tmpfs           788M  824K  788M   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            3.9G  2.5M  3.9G   1% /run/shm
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/property (property_muralee)$ gedit /var/log/auth.log
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+lee@lee-Inspiron-N5110:~/Muralee/rails_projects/rbvrr (master)$ cd /
+lee@lee-Inspiron-N5110:/$ 
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+

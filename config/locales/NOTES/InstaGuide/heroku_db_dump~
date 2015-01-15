@@ -1,0 +1,106 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ git remote add heroku git@heroku.com:guarded-anchorage-5599.git
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ git remote -v
+heroku	git@heroku.com:guarded-anchorage-5599.git (fetch)
+heroku	git@heroku.com:guarded-anchorage-5599.git (push)
+origin	https://muraleef1@bitbucket.org/f1circle/f1circle.git (fetch)
+origin	https://muraleef1@bitbucket.org/f1circle/f1circle.git (push)
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ heroku db:pull
+ !    `db:pull` is not a heroku command.
+ !    Perhaps you meant `pg:pull`.
+ !    See `heroku help` for a list of available commands.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ heroku pg:pull
+Usage: heroku pg:pull <REMOTE_SOURCE_DATABASE> <LOCAL_TARGET_DATABASE>
+
+ pull from REMOTE_SOURCE_DATABASE to LOCAL_TARGET_DATABASE
+ LOCAL_TARGET_DATABASE must not already exist.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ bundle exec rake db:drop
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ heroku pg:pull HEROKU_POSTGRESQL_WHITE f1admin_development
+pg_dump: reading schemas
+pg_dump: reading user-defined tables
+pg_dump: reading extensions
+pg_dump: reading user-defined functions
+pg_dump: reading user-defined types
+pg_dump: reading procedural languages
+pg_dump: reading
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ PGUSER=ostryalabs PGPASSWORD=welcome5 heroku pg:pull HEROKU_POSTGRESQL_WHITE f1admin_devlopment --app guarded-anchorage-5599
+
+pg_dump: reading schemas
+pg_dump: reading user-defined tables
+pg_dump: reading extensions
+pg_dump: reading user-defined functions
+pg_dump: reading user-defined types
+pg_dump: reading procedural languages
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ heroku pg:pull guarded-anchorage-5599::WHITE mylocaldb
+pg_dump: reading schemas
+pg_dump: reading user-defined tables
+pg_dump: reading extensions
+pg_dump: reading user-defined functions
+pg_dump: reading user-defined types
+pg_dump: reading procedural languages
+pg_dump: reading user-defined aggregate functions
+pg_dump: reading user-def
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ heroku addons:add pgbackups
+Adding pgbackups on guarded-anchorage-5599... failed
+ !    That add-on plan is already installed on guarded-anchorage-5599.
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ heroku pgbackups:capture
+
+HEROKU_POSTGRESQL_WHITE_URL (DATABASE_URL)  ----backup--->  b004
+
+Capturing... done
+Storing... done
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ curl -o latest.dump `heroku pgbackups:url`
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 79952  100 79952    0     0   9057      0  0:00:08  0:00:08 --:--:-- 16553
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [ostryalabs] -d [f1admin_development] latest.dump
+pg_restore: connecting to database for restore
+Password: 
+pg_restore: [archiver (db)] connection to database "[f1admin_development]" failed: FATAL:  password authentication failed for user "[ostryalabs]"
+FATAL:  password authentication failed for user "[ostryalabs]"
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ostryalabs@ostryalabs-5:~/Muralee/rails_projects/f1circle (muralee_branch)$ pg_restore -d f1admin_development latest.dump
+pg_restore: [archiver (db)] Error while PROCESSING TOC:
+pg_restore: [archiver (db)] Error from TOC entry 190; 1259 2880459 TABLE attributes vlhzvbayqjojpv
+pg_restore: [archiver (db)] could not execute query: ERROR:  role "vlhzvbayqjojpv" does not exist
+    Command was: ALTER TABLE public.attributes OWNER TO vlhzvbayqjojpv;
+
+
+pg_restore: [archiver (db)] Error from TOC entry 189; 1259 2880457 SEQUENCE attributes_id_seq vlhzvbayqjojpv
+pg_restore: [archiver (db)] could not execute query: ERROR:  role "vlhzvbayqjojpv" does not exist
+    Command was: ALTER TABLE public.attributes_id_seq OWNER TO vlhzvbayqjojpv;
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

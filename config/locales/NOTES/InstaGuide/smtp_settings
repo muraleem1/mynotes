@@ -1,0 +1,10 @@
+F1circle::Application.config.action_mailer.smtp_settings = {
+  :address              => "email-smtp.us-east-1.amazonaws.com",
+  :port                 => 465,
+  :user_name            => 'AKIAJF4W6VWKWLUYZJQA',
+  :password             => 'AobTZZlGE5qT3yhk0FrtTVbu1Iq0GMR/Sn0canmrBUO/',
+  :ssl                  => true,
+  :tls                  => true,
+  :enable_starttls_auto => true  
+}
+

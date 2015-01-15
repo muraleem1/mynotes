@@ -1,14 +1,13 @@
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-******
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#To get autocomplete list
+gem 'rails3-jquery-autocomplete'
+*********************************************************************
 In auto_search_controller.rb
 autocomplete :calendar, :course, :full => true
-******
-******
+*********************************************************************
 in routes
 get 'auto_search/autocomplete_calendar_course'
-
-******
-
+**********************************************************************
 in _search.html
 
 = form_tag calendars_path, :method => 'get' , :class => "form-inline" do
@@ -21,16 +20,13 @@ in _search.html
     = hidden_field_tag :search, :id => "search"
   = submit_tag "Search", :name => nil, :class => "btn-primary btn"
   = link_to "Add Event", new_ccalendar_path, :class => "btn-primary btn"
-
-
-
-******
+***********************************************************************
 in form
 .col-sm-8
         = f.autocomplete_field :course,
           auto_search_autocomplete_calendar_course_path,
           :placeholder => "Course Name", :class => 'form-control'
-******
+************************************************************************
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
